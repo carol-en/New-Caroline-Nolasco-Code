@@ -1,33 +1,24 @@
 <template>
   <div id="app">
-    <h1>Hello there!</h1>
-    <p>Please add a new component :)</p>
-    <NewComponent />
+    <AppContainer />
   </div>
 </template>
 
 <script>
-import NewComponent from './components/NewComponent';
+import AppContainer from './components/AppContainer';
 
 export default {
   name: 'App',
   components: {
-    NewComponent
+    AppContainer
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-p {
-  font-size: 1.5em;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color: #2c3e50;
+    font-size: 1.5em;
+  }
 </style>
