@@ -2,14 +2,18 @@
   <div id="app">
     <h1>Hello there!</h1>
     <p>Please add a new component :)</p>
+    <NewComponent />
   </div>
 </template>
 
 <script>
-
+import NewComponent from './components/NewComponent';
 
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    NewComponent
+  }
 }
 </script>
 
