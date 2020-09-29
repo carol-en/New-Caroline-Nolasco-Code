@@ -1,12 +1,23 @@
 <template>
     <header>
-        <h1>Header Component Begins Here</h1>
+        <AppNav />
+        <AppAbout />
+        <AppTitle />
     </header>
 </template>
 
 <script>
+    import AppNav from './AppNav';
+    import AppAbout from './AppAbout';
+    import AppTitle from './AppTitle';
+    
     export default {
-        name: 'AppHeader'
+        name: 'AppHeader',
+        components: {
+            AppNav,
+            AppAbout,
+            AppTitle
+        }
     }
 </script>
 

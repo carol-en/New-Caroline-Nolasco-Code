@@ -1,12 +1,21 @@
 <template>
     <main>
-        <h1>Content Component!</h1>    
+        <h1>Content Component!</h1> 
+        <ContactForm />   
+        <AppProjects />
     </main>
 </template>
 
 <script>
+import ContactForm from './ContactForm';
+import AppProjects from './AppProjects';
+
 export default {
-    name: 'AppContent'
+    name: 'AppContent',
+    components: {
+        ContactForm,
+        AppProjects
+    }
 }
 </script>
 
