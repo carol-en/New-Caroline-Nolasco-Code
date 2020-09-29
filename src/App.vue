@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    <Users />
+    <h1>Hello there!</h1>
+    <p>Please add a new component :)</p>
   </div>
 </template>
 
 <script>
-import Users from './components/Users.vue'
+
 
 export default {
-  name: 'App',
-  components: {
-    Users
-  }
+  name: 'App'
 }
 </script>
 
@@ -23,5 +21,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+p {
+  font-size: 1.5em;
 }
 </style>
