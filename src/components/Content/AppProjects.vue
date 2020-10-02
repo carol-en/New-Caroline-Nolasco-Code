@@ -16,7 +16,25 @@
               </figure>
           </div>
       </aside>
+
+          <aside class="prj">
+          <div class="prj-data">
+              <h2>Project</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni harum quaerat dolore assumenda? Earum eum maxime optio quibusdam, suscipit aspernatur, voluptatem impedit adipisci aut nobis iste aperiam voluptate sunt sequi!
+                Amet nisi perferendis neque illum officia quos fugiat cupiditate nam. Exercitationem harum, reprehenderit
+              </p>
+          </div>
+
+          <div class="prj-thumbnil">
+              <figure>
+                  <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
+              </figure>
+          </div>
+      </aside>
   </section>
+
+  
 </template>
 
 <script>
@@ -25,8 +43,27 @@ export default {
 }
 </script>
 
-<style scoped>
-    .projects {
-        background: #fae7eb;
+<style scoped lang="scss">
+//  Figure out how to switch flex order depending on odd/even nth child
+    .prj {
+        display: flex;
+        flex-flow: row nowrap;
+
+        .prj-data {
+            flex: 1;
+        }
+
+        .prj-thumbnil {
+            flex: 1;
+        }
+    }
+    .prj:nth-child(even) {
+        background: $green-bg;
+        color: $accent-font-color;
+    }
+
+        .prj:nth-child(odd) {
+        background: $light-bg;
+        color: $primary-font-color;
     }
 </style>

@@ -17,8 +17,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     nav {
-        background: lightgray;
+        background: $green-bg;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
     }
 </style>

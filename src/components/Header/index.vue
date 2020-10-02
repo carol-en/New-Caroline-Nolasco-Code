@@ -21,9 +21,9 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     header {
-        border: 1px solid gold;
-        text-align: center;
+        background: $pink-bg;
+        color: $accent-font-color;
     }
 </style>

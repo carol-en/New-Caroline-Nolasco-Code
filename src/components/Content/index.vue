@@ -19,8 +19,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     main {
-        border: 1px solid gold;
+        background: $app-bg;
     }
 </style>

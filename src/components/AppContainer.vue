@@ -23,10 +23,10 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .container {
-    border: 1px solid gold;
     width: 75%;
     margin: 0 auto;
+    background: $app-bg;
 }
 </style>

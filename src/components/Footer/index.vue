@@ -1,7 +1,7 @@
 <template>
-    <header>
+    <footer>
         <h1>Footer Component Begins Here</h1>
-    </header>
+    </footer>
 </template>
 
 <script>
@@ -11,7 +11,7 @@
 </script>
 
 <style scoped>
-    header {
+    footer {
         border: 1px solid gold;
         text-align: center;
     }

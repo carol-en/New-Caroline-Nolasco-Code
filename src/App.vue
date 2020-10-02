@@ -17,7 +17,10 @@ export default {
 
 <style lang="scss">
 #app {
-  //this is where we use the variable
-  color: $primary;
+font-family: $content-font;
+font-size: 1rem;
+width: 100%;
+min-height: 100vh;
+background: $app-bg;
 }
 </style>

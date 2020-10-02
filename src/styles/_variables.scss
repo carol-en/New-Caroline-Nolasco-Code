@@ -1,8 +1,23 @@
+
+//==========================
+// IMPORTS
+//==========================
 @import './reset';
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Noto+Sans+JP:wght@300;400&family=Roboto+Mono:wght@200;300&display=swap');
 
-
+//==========================
+//  COLORS
+//==========================
 $primary-font-color: #3a5155;
 $accent-font-color: #fff;
 $green-bg: #3a5155;
 $pink-bg: #FD7878;
 $light-bg: #f7fff7; 
+$app-bg: #fff;
+
+//==========================
+// FONTS
+//==========================
+$content-font: 'Noto Sans JP', sans-serif;
+$header-font:  'Lora', serif;
+$header2-font: 'Roboto Mono', monospace;

@@ -11,8 +11,9 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped lang="scss">
     .contact {
-        background: lightpink;
+        background: $green-bg;
+        color: $accent-font-color;
     }
 </style>
