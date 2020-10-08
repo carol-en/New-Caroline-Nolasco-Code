@@ -15,8 +15,25 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .about {
-        border: 1px solid red;
+        align-self: center;
+        font-size: .75em;
+
+        p {
+            width: 85%;
+            line-height: 1.75em;
+        }
+
+        h2 {
+            font-size: 2.25em;
+            text-transform: uppercase;
+            font-family: $header2-font;
+            color: $black-color;
+            text-shadow: -1px 0 $white-color, 
+              0 1px $white-color, 1px 0 $white-color, 
+              0 -1px $white-color;
+
+        }
     }
 </style>

@@ -1,6 +1,9 @@
 <template>
     <section class="title">
-        <h2>Caroline Nolasco</h2>
+        <h2>
+            <span>Caroline</span>
+            <span>Nolasco</span>
+        </h2>
     </section>
 </template>
 
@@ -10,8 +13,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .title {
-        border: 1px solid pink;
+        align-self: center;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $header-font;
+        font-size: 2em;
+        letter-spacing: .05em;
+
+        span {
+            display: block;
+        }
     }
 </style>
