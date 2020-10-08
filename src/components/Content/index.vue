@@ -1,6 +1,5 @@
 <template>
     <main>
-        <h1>Content Component!</h1> 
         <ContactForm />   
         <AppProjects />
     </main>

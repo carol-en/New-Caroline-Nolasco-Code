@@ -1,6 +1,5 @@
 <template>
   <section class="projects">
-      <h1>Projects Will Go Here!</h1>
       <aside class="prj">
           <div class="prj-data">
               <h2>Project 1</h2>
@@ -15,6 +14,7 @@
                   <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
               </figure>
           </div>
+          <footer class="tail"></footer>
       </aside>
 
           <aside class="prj">
@@ -31,6 +31,7 @@
                   <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
               </figure>
           </div>
+          <footer class="tail"></footer>
       </aside>
 
       <aside class="prj">
@@ -46,6 +47,7 @@
                   <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
               </figure>
           </div>         
+          <footer class="tail"></footer>
         </aside>
 
       <aside class="prj">
@@ -61,6 +63,7 @@
                   <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
               </figure>
           </div>  
+          <footer class="tail"></footer>
         </aside>
 
       <aside class="prj">
@@ -76,6 +79,7 @@
                   <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
               </figure>
           </div>
+          <footer class="tail"></footer>
         </aside>
   </section>
 
@@ -95,8 +99,8 @@ export default {
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: start;
-        padding: 2rem;
-        z-index: 1;
+        padding: 3rem;
+        z-index: auto;
 
         .prj-data {
             flex: 1;
@@ -108,7 +112,7 @@ export default {
             }
 
             p {
-                font-size: .9em;
+                font-size: .75em;
             }
         }
 
@@ -122,18 +126,35 @@ export default {
                 }
             }
         }
+    
+        .tail {
+            position: absolute;   
+            left: 45%;
+            bottom: -2rem;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 4.5em 5.5em 0 5.5em;
+            z-index: 2;
+        }   
     }
+    
     .prj:nth-child(odd) {
         background: $green-bg;
         color: $accent-font-color;
         text-align: right;
+        z-index: 1;
 
         .prj-data {
             order: 2;
+            z-index: 2;
 
             p {
                 margin: 2em 0 0 3em;
             }
+        }
+        .tail {
+            border-color: $green-bg transparent transparent transparent;   
         }
     }
  
@@ -143,29 +164,22 @@ export default {
     color: $primary-font-color;
     text-align: left;
 
-    .prj-data {
-        p {
-        margin: 2em 3em 0 0; 
+        .prj-data {
+            p {
+            margin: 2em 3em 0 0; 
+            }
         }
-    }
-
-    .prj-thumbnil {
-        order: 1;
-    }
+        .prj-thumbnil {
+            order: 1;
+        }
+        .tail {
+            border-color: $light-bg transparent transparent transparent;   
+        }
 }
 
-// Figure out why Z_index is still hidden beneath next prj
-
-    .prj:after {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 50px;
-        height: 50px;
-        background: pink;
-        padding: 1em;
-        left: 50%;
-        bottom: -2rem;
-        z-index: 5;
+    .prj:nth-last-child(1) {
+        .tail {
+            display: none;
+        }   
     }
 </style>

@@ -1,8 +1,6 @@
 <template>
     <div class="container">
         <AppHeader />
-        <h1>My New Web Site Starts Here!</h1>
-        <p>I will start building my website from here. :^)</p>
         <AppContent />
         <AppFooter />
     </div>
@@ -25,8 +23,9 @@
 
 <style scoped lang="scss">
 .container {
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
     background: $app-bg;
+    font-size: 1.25em;
 }
 </style>
