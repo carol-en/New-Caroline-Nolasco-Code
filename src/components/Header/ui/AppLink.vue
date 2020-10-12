@@ -1,13 +1,26 @@
 <template>
-  <a>Link!</a>
+  <a v-bind:href="href">{{title}}</a>
 </template>
 
 <script>
 export default {
-    name: 'AppLink'
+    name: 'AppLink',
+    props: {
+      title: String,
+      href: String
+    }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  a {
+    color: $white-color;
+    text-decoration: none;
+  }
 
+  a:hover, a:active, a:focus, a:focus-visible {
+    text-decoration: underline;
+    outline: none;
+    color: $pink-bg;
+  }
 </style>

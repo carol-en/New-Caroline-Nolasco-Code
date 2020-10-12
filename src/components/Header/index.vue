@@ -26,7 +26,11 @@
 // Add bg image
 
     header {
-        background: $pink-bg;
+        background: $pink-bg url('./assets/banner_default.png')no-repeat right;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         color: $accent-font-color;
         display: flex;
         flex-flow: row wrap;

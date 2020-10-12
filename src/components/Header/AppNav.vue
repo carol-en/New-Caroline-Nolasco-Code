@@ -1,7 +1,15 @@
 <template>
   <nav>
-      <AppLink />
-      <SocialMedia />
+      <section class="inner_navi">
+        <AppLink title="contact" href="#contact"/>
+        <AppLink title="projects" href="#projects"/>
+        <AppLink title="resume" href="#resume"/>
+      </section>
+      <section class="inner_navi"> 
+        <SocialMedia title="linked in" href="linked in site"/>
+        <SocialMedia title="github" href="github site"/>
+        <SocialMedia title="general assembly" href="general assembly site"/>
+      </section>
   </nav>
 </template>
 
@@ -23,5 +31,18 @@ export default {
         padding: 1rem;
         display: flex;
         justify-content: space-between;
+
+       .inner_navi {
+        display: flex;
+        justify-content: space-evenly;
+
+           a {
+            text-transform: uppercase;
+            font-family: $header2-font;
+            font-size: .75em;
+            display: block;
+            padding: .25rem 1.15rem;
+        }
+       }
     }
 </style>
