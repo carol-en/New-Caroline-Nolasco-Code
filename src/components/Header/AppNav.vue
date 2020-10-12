@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="navigation">
       <section class="inner_navi">
         <AppLink title="contact" href="#contact"/>
         <AppLink title="projects" href="#projects"/>
@@ -10,10 +10,14 @@
         <SocialMedia title="github" href="github site"/>
         <SocialMedia title="general assembly" href="general assembly site"/>
       </section>
+
+    <!-- https://medium.com/front-end-weekly/how-to-use-fon-awesome-5-on-vuejs-project-ff0f28310821 -->
+
   </nav>
 </template>
 
 <script>
+
 import AppLink from './ui/AppLink';
 import SocialMedia from './ui/SocialMedia';
 export default {
@@ -26,7 +30,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    nav {
+    .navigation {
         background: $green-bg;
         padding: 1rem;
         display: flex;
