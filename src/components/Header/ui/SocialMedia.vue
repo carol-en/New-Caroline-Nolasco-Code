@@ -1,26 +1,39 @@
 <template>
-  <a v-bind:href="href">{{title}}</a>
+<span>
+  <a class="social-media-links"
+   v-bind:href="href" v-bind:title="title"
+   target="_blank" rel="noopener noreferrer"> 
+    <i v-bind:class="[icons.type, icons.name]"></i>
+  </a>
+</span>  
 </template>
 
 <script>
-
 export default {
     name: 'SocialMedia',
     props: {
       title: String,
       href: String,
-      icon: Array
+      icons: Object
     }
 }
 </script>
 
 <style scoped lang="scss">
-  a {
+
+// span.socials {
+//   font-size: 1.5em;
+// }
+  a.social-media-links {
     color: $white-color;
     text-decoration: none;
+      font-size: 1.5em;
   }
 
-  a:hover, a:active, a:focus, a:focus-visible {
+  a:hover.social-media-links, 
+  a:active.social-media-links, 
+  a:focus.social-media-links, 
+  a:focus-visible.social-media-links {
     text-decoration: underline;
     outline: none;
     color: $pink-bg;

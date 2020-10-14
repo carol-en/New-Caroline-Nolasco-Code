@@ -1,21 +1,40 @@
 <template>
   <nav class="navigation">
       <section class="inner_navi">
-        <AppLink title="contact" href="#contact"/>
-        <AppLink title="projects" href="#projects"/>
-        <AppLink title="resume" href="#resume"/>
+        <AppLink title="contact" href="#contact"></AppLink>
+        <AppLink title="projects" href="#projects"></AppLink>
+        <AppLink title="resume" href="#resume"></AppLink>
       </section>
+      
       <section class="inner_navi"> 
-        <SocialMedia title="linked in" href="linked in site" v-bind:icon="{
-          icons: '<i class="fab fa-linkedin"></i>'
-        }"/>
-        <!-- <SocialMedia title="github" href="github site"/>
-        <SocialMedia title="general assembly" href="general assembly site"/> -->
+        <SocialMedia 
+        title="LinkedIn" 
+        href="https://www.linkedin.com/in/carolinenolasco/" 
+         v-bind:icons="{
+          type: 'fab',
+          name: 'fa-linkedin'
+          }">
+        </SocialMedia>
+
+        <SocialMedia 
+        title="Git Hub" 
+        href="https://github.com/carol-en" 
+         v-bind:icons="{
+          type: 'fab',
+          name: 'fa-github-square'
+          }">
+        </SocialMedia>
+
+        <SocialMedia 
+        title="Art Station" 
+        href="https://www.artstation.com/carolen" 
+         v-bind:icons="{
+          type: 'fab',
+          name: 'fa-artstation'
+          }">
+        </SocialMedia>
       </section>
 
-        <i class="fab fa-linkedin"></i>
-        <i class="fab fa-github-square"></i>
-        <i class="fas fa-certificate"></i>
 
 
   </nav>
@@ -39,7 +58,6 @@ export default {
 <style scoped lang="scss">
     .navigation {
         background: $green-bg;
-        padding: 1rem;
         display: flex;
         justify-content: space-between;
 
