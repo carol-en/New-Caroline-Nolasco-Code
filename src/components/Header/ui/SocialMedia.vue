@@ -8,7 +8,8 @@ export default {
     name: 'SocialMedia',
     props: {
       title: String,
-      href: String
+      href: String,
+      icon: Array
     }
 }
 </script>

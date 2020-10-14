@@ -6,12 +6,17 @@
         <AppLink title="resume" href="#resume"/>
       </section>
       <section class="inner_navi"> 
-        <SocialMedia title="linked in" href="linked in site"/>
-        <SocialMedia title="github" href="github site"/>
-        <SocialMedia title="general assembly" href="general assembly site"/>
+        <SocialMedia title="linked in" href="linked in site" v-bind:icon="{
+          icons: '<i class="fab fa-linkedin"></i>'
+        }"/>
+        <!-- <SocialMedia title="github" href="github site"/>
+        <SocialMedia title="general assembly" href="general assembly site"/> -->
       </section>
 
-    <!-- https://medium.com/front-end-weekly/how-to-use-fon-awesome-5-on-vuejs-project-ff0f28310821 -->
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-github-square"></i>
+        <i class="fas fa-certificate"></i>
+
 
   </nav>
 </template>
@@ -20,6 +25,8 @@
 
 import AppLink from './ui/AppLink';
 import SocialMedia from './ui/SocialMedia';
+
+
 export default {
     name: 'AppNav',
     components: {
