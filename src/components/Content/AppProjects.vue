@@ -129,12 +129,12 @@ export default {
     
         .tail {
             position: absolute;   
-            left: 45%;
-            bottom: -2rem;
+            left: 50%;
+            bottom: -2.5rem;
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 4.5em 5.5em 0 5.5em;
+            border-width: 2em 2em 0 2em;
             z-index: 2;
         }   
     }

@@ -60,6 +60,7 @@ export default {
         background: $green-bg;
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
        .inner_navi {
         display: flex;
@@ -68,9 +69,8 @@ export default {
            a {
             text-transform: uppercase;
             font-family: $header2-font;
-            font-size: .75em;
             display: block;
-            padding: .25rem 1.15rem;
+            padding: .35rem 1.15rem;
         }
        }
     }

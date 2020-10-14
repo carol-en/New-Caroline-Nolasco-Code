@@ -1,5 +1,5 @@
 <template>
-  <a v-bind:href="href">{{title}}</a>
+  <a class="navi-links" v-bind:href="href">{{title}}</a>
 </template>
 
 <script>
@@ -13,12 +13,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  a {
+  a.navi-links {
     color: $white-color;
+    font-size: .85em;
     text-decoration: none;
   }
 
-  a:hover, a:active, a:focus, a:focus-visible {
+  a.navi-links:hover, 
+  a.navi-links:active, 
+  a.navi-links:focus, 
+  a.navi-links:focus-visible {
     text-decoration: underline;
     outline: none;
     color: $pink-bg;

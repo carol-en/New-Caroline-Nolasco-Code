@@ -1,9 +1,13 @@
 <template>
-    <header>
+    <header class="header">
         <AppNav />
-        <AppAbout />
-        <AppTitle />
+        <section class="inner-header">
+            <AppAbout />
+            <AppTitle />
+        </section>
+        <section class="tail"></section>
     </header>
+
 </template>
 
 <script>
@@ -22,34 +26,50 @@
 </script>
 
 <style scoped lang="scss">
-
-// Add bg image
-
-    header {
+    .inner-header {
         background: $pink-bg url('./assets/banner_default.png')no-repeat right;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         color: $accent-font-color;
+        font-size: 1.15em;
+        width: 100%;
+        min-height: 300px;
+        height: 50vh;
         display: flex;
         flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+
+        .about {
+            order: 2;
+            flex: 1;
+            padding: 3rem 0 3rem 3rem;
+        }
+
+        .title {
+            order: 3;
+            flex: 1;
+            padding: 3rem 3rem 3rem 0;
+        }
     }
 
-    nav {
-        width: 100%;
-        order: 1;
+    .header {
+        position: relative;
+        z-index: 4;
+
+        .tail {
+                position: absolute;  
+                border-color: $pink-bg transparent transparent transparent; 
+                left: 50%;
+                bottom: -2.5rem;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 2em 2em 0 2em;
+        }
     }
 
-    section.about {
-        order: 2;
-        flex: 1;
-        padding: 3rem 0 3rem 3rem;
-    }
 
-    section.title {
-        order: 3;
-        flex: 1;
-        padding: 3rem 3rem 3rem 0;
-    }
 </style>

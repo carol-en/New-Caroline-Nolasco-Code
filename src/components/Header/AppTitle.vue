@@ -1,10 +1,10 @@
 <template>
-    <section class="title">
+    <aside class="title">
         <h2>
             <span>Caroline</span>
             <span>Nolasco</span>
         </h2>
-    </section>
+    </aside>
 </template>
 
 <script>
@@ -15,7 +15,6 @@ export default {
 
 <style scoped lang="scss">
     .title {
-        align-self: center;
         text-align: center;
         text-transform: uppercase;
         font-family: $header-font;

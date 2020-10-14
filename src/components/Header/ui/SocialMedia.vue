@@ -1,11 +1,9 @@
 <template>
-<span>
   <a class="social-media-links"
    v-bind:href="href" v-bind:title="title"
    target="_blank" rel="noopener noreferrer"> 
     <i v-bind:class="[icons.type, icons.name]"></i>
   </a>
-</span>  
 </template>
 
 <script>
@@ -20,14 +18,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-// span.socials {
-//   font-size: 1.5em;
-// }
   a.social-media-links {
     color: $white-color;
     text-decoration: none;
-      font-size: 1.5em;
+    font-size: 2em;
   }
 
   a:hover.social-media-links, 
