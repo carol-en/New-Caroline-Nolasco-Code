@@ -1,6 +1,9 @@
+
 <template>
+<!-- https://vuejs.org/v2/guide/state-management.html -->
   <nav class="navigation">
       <section class="inner_navi">
+        <span v-on:click="test()">Contact Me!</span>
         <AppLink title="contact" href="#contact"></AppLink>
         <AppLink title="projects" href="#projects"></AppLink>
         <AppLink title="resume" href="#resume"></AppLink>
@@ -51,6 +54,11 @@ export default {
     components: {
         AppLink,
         SocialMedia
+    },
+    methods: {
+      test: function() {
+        alert('this is a test for methods!!!');
+      }
     }
 }
 </script>
@@ -66,11 +74,16 @@ export default {
         display: flex;
         justify-content: space-evenly;
 
-           a {
+           a, span {
             text-transform: uppercase;
             font-family: $header2-font;
             display: block;
             padding: .35rem 1.15rem;
+        }
+
+        span {
+          cursor: pointer;
+          color: $white-color;
         }
        }
     }

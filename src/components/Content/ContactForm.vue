@@ -1,4 +1,5 @@
 <template>
+<div class="fixed">
   <section class="contact">
       <h2>Contact Me!</h2>
       
@@ -24,6 +25,8 @@
     </form>
 
   </section>
+
+</div>
 </template>
 
 <script>
@@ -33,12 +36,31 @@ export default {
 </script>
 
 <style scoped lang="scss">
+// https://www.emailjs.com/docs/examples/vuejs/
+//  Finish styling form
+//  Make sending more functional
+// Make click to show/hide form
+
+
+.fixed {
+    width: 100%;
+    height: 100%;
+    background: rgba($white-color, .3);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
     .contact {
         background: $light-bg;
         color: $accent-font-color;
         width: 45%;
-        margin: 0 auto;
+        margin: 10% auto;
         padding: 1.5rem;
+        -webkit-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
+        -moz-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
+        box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
 
         h2 {
             text-align: center;
@@ -47,26 +69,46 @@ export default {
             color: $green-bg;
         }
 
-        // https://www.emailjs.com/docs/examples/vuejs/
-        //  Finish styling form
-        //  Make sending more functional
-        // Make click to show/hide form
-
         .form {
+            .form-control {
+                padding: .5rem;
+
+                .form-label {
+                    color: $primary-font-color;
+                    font-size: .75em;
+                    font-weight: bold;
+                    margin-bottom: .05em;
+                }
+            }
 
             input, textarea, button {
                 width: 100%;
                 background: $white-color;
                 border: 0;
-                border: .10em dotted $pink-bg;
-                padding: .15rem;
+                border: .10em solid $light-gray;
+                padding: .5rem;
                 outline: none;
                 color: $green-bg;
+                border-radius: .25em;
+                font-size: .65em;
             }
 
-            button:hover {
+            textarea {
+                resize: vertical;
+                height: 10em;
+            }
+
+            .submit-btn {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: .85em;
+                letter-spacing: .05em;
+            }
+
+            .submit-btn:hover {
                 background: $pink-bg;
                 color: $white-color;
+                border: .10em solid $pink-bg;
             }
 
             input:hover, 
@@ -76,7 +118,7 @@ export default {
             input:focus, 
             textarea:focus {
                 border: .10em solid $pink-bg;
-                border-left: 1em solid $pink-bg;
+                border-right: 1em solid $pink-bg;
             }
         }
     }
