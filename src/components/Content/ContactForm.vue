@@ -52,6 +52,10 @@ export default {
     left: 0;
     z-index: 5;
 }
+
+.active {
+    display: block;
+}
     .contact {
         background: $light-bg;
         color: $accent-font-color;

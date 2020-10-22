@@ -1,6 +1,8 @@
 
 <template>
-<!-- https://vuejs.org/v2/guide/state-management.html -->
+<!-- https://vuejs.org/v2/guide/state-management.html 
+https://forum.vuejs.org/t/how-to-add-a-open-an-another-component-when-a-button-is-clicked/26959/2 
+-->
   <nav class="navigation">
       <section class="inner_navi">
         <span v-on:click="test()">Contact Me!</span>
@@ -55,9 +57,16 @@ export default {
         AppLink,
         SocialMedia
     },
+
+    data() {
+      return {
+        isActive: false
+      }
+    },
     methods: {
       test: function() {
-        alert('this is a test for methods!!!');
+        this.isActive = !this.isActive;
+        alert(this.isActive);
       }
     }
 }
