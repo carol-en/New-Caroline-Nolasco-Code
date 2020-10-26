@@ -5,7 +5,7 @@ https://forum.vuejs.org/t/how-to-add-a-open-an-another-component-when-a-button-i
 -->
   <nav class="navigation">
       <section class="inner_navi">
-        <span v-on:click="test()">Contact Me!</span>
+        <span v-on:click="$emit('open-contact-form')">Contact Me!</span>
         <AppLink title="contact" href="#contact"></AppLink>
         <AppLink title="projects" href="#projects"></AppLink>
         <AppLink title="resume" href="#resume"></AppLink>
@@ -58,16 +58,8 @@ export default {
         SocialMedia
     },
 
-    data() {
-      return {
-        isActive: false
-      }
-    },
-    methods: {
-      test: function() {
-        this.isActive = !this.isActive;
-        alert(this.isActive);
-      }
+    props: {
+      method: { type: Function },
     }
 }
 </script>

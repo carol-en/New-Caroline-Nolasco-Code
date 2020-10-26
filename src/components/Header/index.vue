@@ -1,10 +1,12 @@
 <template>
     <header class="header">
-        <AppNav />
+        <AppNav @open-contact-form="openContactForm" />
         <section class="inner-header">
             <AppAbout />
             <AppTitle />
+            <ContactForm modal="modal" @open-contact-form="openContactForm"/>
         </section>
+        
         <section class="tail"></section>
     </header>
 
@@ -14,13 +16,26 @@
     import AppNav from './AppNav';
     import AppAbout from './AppAbout';
     import AppTitle from './AppTitle';
+    import ContactForm from './ContactForm';
     
     export default {
         name: 'AppHeader',
         components: {
             AppNav,
             AppAbout,
-            AppTitle
+            AppTitle,
+            ContactForm
+        },
+        data() {
+            return {
+                modal: false
+            }
+        },
+        methods: {
+            openContactForm: function() {
+                this.modal = !this.modal;
+                alert('This method is coming from header/index.vue! ' + this.modal);
+            }
         }
     }
 </script>
