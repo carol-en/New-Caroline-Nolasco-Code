@@ -4,7 +4,8 @@
         <section class="inner-header">
             <AppAbout />
             <AppTitle />
-            <ContactForm modal="modal" @open-contact-form="openContactForm"/>
+            <ContactForm :modal="modal" @open-contact-form="openContactForm"/>
+            <h2>{{modal}}</h2>
         </section>
         
         <section class="tail"></section>

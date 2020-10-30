@@ -1,7 +1,9 @@
 <template>
-<div class="fixed active" v-on:click="$emit('open-contact-form')">
+<!-- <div class="fixed active" v-on:click="$emit('open-contact-form')"> -->
+    <div class="fixed" v-bind:class="{ active: modal }" v-on:click="$emit('open-contact-form')">
   <section class="contact">
-      <h2>Contact Me! {{modal}}</h2>
+      <h2>Contact Me!</h2>
+      <h2>{{modal}}</h2>
       
     <form class="form">
         <div class="form-control">
@@ -32,12 +34,8 @@
 <script>
 export default {
     name: 'ContactForm',
-
-    props:  {
-        modal: {
-            type: Boolean
-        },
-        method: { type: Function }
+    props: {
+        modal: Boolean
     }
 }
 </script>
