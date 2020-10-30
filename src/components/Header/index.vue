@@ -5,7 +5,6 @@
             <AppAbout />
             <AppTitle />
             <ContactForm :modal="modal" @open-contact-form="openContactForm"/>
-            <h2>{{modal}}</h2>
         </section>
         
         <section class="tail"></section>
@@ -35,7 +34,7 @@
         methods: {
             openContactForm: function() {
                 this.modal = !this.modal;
-                alert('This method is coming from header/index.vue! ' + this.modal);
+                console.log('modal updated: ' + this.modal);
             }
         }
     }

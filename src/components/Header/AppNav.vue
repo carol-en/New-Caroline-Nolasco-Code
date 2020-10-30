@@ -5,8 +5,7 @@ https://forum.vuejs.org/t/how-to-add-a-open-an-another-component-when-a-button-i
 -->
   <nav class="navigation">
       <section class="inner_navi">
-        <span v-on:click="$emit('open-contact-form')">Contact Me!</span>
-        <AppLink title="contact" href="#contact"></AppLink>
+        <button v-on:click="$emit('open-contact-form')">Contact</button>
         <AppLink title="projects" href="#projects"></AppLink>
         <AppLink title="resume" href="#resume"></AppLink>
       </section>
@@ -75,16 +74,28 @@ export default {
         display: flex;
         justify-content: space-evenly;
 
-           a, span {
+           a, button {
+            background: $green-bg;
+            border: 0;
+            color: $white-color;
+            cursor: pointer;
             text-transform: uppercase;
             font-family: $header2-font;
             display: block;
             padding: .35rem 1.15rem;
         }
 
-        span {
-          cursor: pointer;
-          color: $white-color;
+        a:hover, 
+        a:active, 
+        a:focus, 
+        a:focus-visible, 
+        button:hover,
+        button:active, 
+        button:focus, 
+        button:focus-visible {
+          text-decoration: underline;
+          color: $pink-bg;
+          outline: none;
         }
        }
     }

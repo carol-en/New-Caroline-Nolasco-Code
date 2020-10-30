@@ -1,9 +1,7 @@
 <template>
-<!-- <div class="fixed active" v-on:click="$emit('open-contact-form')"> -->
-    <div class="fixed" v-bind:class="{ active: modal }" v-on:click="$emit('open-contact-form')">
-  <section class="contact">
+<section>
+  <aside class="contact" v-bind:class="{ active: modal }">
       <h2>Contact Me!</h2>
-      <h2>{{modal}}</h2>
       
     <form class="form">
         <div class="form-control">
@@ -25,10 +23,9 @@
             <button type="submit" class="submit-btn">Send!</button>
         </div>
     </form>
-
-  </section>
-
-</div>
+  </aside>
+  <div class="fixed" v-bind:class="{ active: modal }" v-on:click="$emit('open-contact-form')"></div>
+</section>
 </template>
 
 <script>
@@ -46,7 +43,6 @@ export default {
 //  Make sending more functional
 // Make click to show/hide form
 
-
 .fixed {
     width: 100%;
     height: 100%;
@@ -58,77 +54,84 @@ export default {
     z-index: 5;
 }
 
+.contact {
+    background: $light-bg;
+    color: $accent-font-color;
+    display: none;
+    width: 45%;
+    padding: 1.5rem;
+    position: fixed;
+    margin: 10% 28%;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    -webkit-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
+    -moz-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
+    box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
+
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $header-font;
+        color: $green-bg;
+    }
+
+    .form {
+        .form-control {
+            padding: .5rem;
+
+            .form-label {
+                color: $primary-font-color;
+                font-size: .75em;
+                font-weight: bold;
+                margin-bottom: .05em;
+            }
+        }
+
+        input, textarea, button {
+            width: 100%;
+            background: $white-color;
+            border: 0;
+            border: .10em solid $light-gray;
+            padding: .5rem;
+            outline: none;
+            color: $green-bg;
+            border-radius: .25em;
+            font-size: .65em;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 10em;
+        }
+
+        .submit-btn {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: .85em;
+            letter-spacing: .05em;
+        }
+
+        .submit-btn:hover {
+            background: $pink-bg;
+            color: $white-color;
+            border: .10em solid $pink-bg;
+        }
+
+        input:hover, 
+        textarea:hover, 
+        input:active, 
+        textarea:active, 
+        input:focus, 
+        textarea:focus {
+            border: .10em solid $pink-bg;
+            border-right: 1em solid $pink-bg;
+        }
+    }
+}
+
 .active {
     display: block;
 }
-    .contact {
-        background: $light-bg;
-        color: $accent-font-color;
-        width: 45%;
-        margin: 10% auto;
-        padding: 1.5rem;
-        -webkit-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
-        -moz-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
-        box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
 
-        h2 {
-            text-align: center;
-            text-transform: uppercase;
-            font-family: $header-font;
-            color: $green-bg;
-        }
-
-        .form {
-            .form-control {
-                padding: .5rem;
-
-                .form-label {
-                    color: $primary-font-color;
-                    font-size: .75em;
-                    font-weight: bold;
-                    margin-bottom: .05em;
-                }
-            }
-
-            input, textarea, button {
-                width: 100%;
-                background: $white-color;
-                border: 0;
-                border: .10em solid $light-gray;
-                padding: .5rem;
-                outline: none;
-                color: $green-bg;
-                border-radius: .25em;
-                font-size: .65em;
-            }
-
-            textarea {
-                resize: vertical;
-                height: 10em;
-            }
-
-            .submit-btn {
-                text-transform: uppercase;
-                font-weight: bold;
-                font-size: .85em;
-                letter-spacing: .05em;
-            }
-
-            .submit-btn:hover {
-                background: $pink-bg;
-                color: $white-color;
-                border: .10em solid $pink-bg;
-            }
-
-            input:hover, 
-            textarea:hover, 
-            input:active, 
-            textarea:active, 
-            input:focus, 
-            textarea:focus {
-                border: .10em solid $pink-bg;
-                border-right: 1em solid $pink-bg;
-            }
-        }
-    }
 </style>
