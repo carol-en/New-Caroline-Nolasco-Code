@@ -3,7 +3,7 @@
   <aside class="contact" v-bind:class="{ active: modal }">
       <h2>Contact Me!</h2>
       
-    <form class="form">
+    <form class="form" @submit.prevent="sendEmail">
         <div class="form-control">
             <span class="form-label"><label for="name">Name</label></span>
             <input type="text" id="name" name="name" required placeholder="John Smith" />        
@@ -20,7 +20,8 @@
         </div>
 
         <div class="form-control">
-            <button type="submit" class="submit-btn">Send!</button>
+            <button type="submit" class="form-btn">Send!</button>
+            <button class="form-btn" v-on:click="updateForm()">Reset</button>
         </div>
     </form>
   </aside>
@@ -29,20 +30,39 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
     name: 'ContactForm',
+    data() {
+        return {
+            emailSent: false
+        }
+    },
     props: {
         modal: Boolean
+    },
+    methods: {
+        sendEmail: (e) => {
+            emailjs.sendForm('service_6w3urpt', 'template_tmd0fes', e.target, 'user_6yh7gv0e3ksC61YIxijVT')
+                .then((result) => {
+                    console.log('SUCCESS!', result.status, result.text);
+                }, (error) => {
+                    console.log('FAILED...', error);
+                });
+        },
+
+        updateForm: function (e) {
+            e.preventDefault();
+            
+            this.emailSent = !this.emailSent;
+            console.log("updateForm has been launched & emailSent updated to " + this.emailSent);
+        }
     }
 }
 </script>
 
 <style scoped lang="scss">
-// https://www.emailjs.com/docs/examples/vuejs/
-//  Finish styling form
-//  Make sending more functional
-// Make click to show/hide form
-
 .fixed {
     width: 100%;
     height: 100%;
@@ -105,14 +125,21 @@ export default {
             height: 10em;
         }
 
-        .submit-btn {
+        button.form-btn {
+            cursor: pointer;
+            text-align: center;
+            width: initial;
             text-transform: uppercase;
             font-weight: bold;
             font-size: .85em;
             letter-spacing: .05em;
+            display: inline-block;
+        }
+        button.form-btn:nth-child(1) {
+            margin-right: .5em;
         }
 
-        .submit-btn:hover {
+        .form-btn:hover {
             background: $pink-bg;
             color: $white-color;
             border: .10em solid $pink-bg;
