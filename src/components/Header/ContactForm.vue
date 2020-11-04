@@ -21,7 +21,7 @@
 
         <div class="form-control">
             <button type="submit" class="form-btn">Send!</button>
-            <button class="form-btn" v-on:click="updateForm()">Reset</button>
+            <button class="form-btn">Reset</button>
         </div>
     </form>
   </aside>
@@ -43,20 +43,18 @@ export default {
         modal: Boolean
     },
     methods: {
+        contactEmailSent: function() {
+            // this.$emit('emailSubmitted');
+            console.log('fgkjrsglrlksgkl')
+        },
         sendEmail: (e) => {
+            this.contactEmailSent();
             emailjs.sendForm('service_6w3urpt', 'template_tmd0fes', e.target, 'user_6yh7gv0e3ksC61YIxijVT')
                 .then((result) => {
                     console.log('SUCCESS!', result.status, result.text);
                 }, (error) => {
                     console.log('FAILED...', error);
                 });
-        },
-
-        updateForm: function (e) {
-            e.preventDefault();
-            
-            this.emailSent = !this.emailSent;
-            console.log("updateForm has been launched & emailSent updated to " + this.emailSent);
         }
     }
 }
