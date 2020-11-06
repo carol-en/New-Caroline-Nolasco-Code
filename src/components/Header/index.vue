@@ -4,7 +4,7 @@
         <section class="inner-header">
             <AppAbout />
             <AppTitle />
-            <ContactForm :modal="modal" @open-contact-form="openContactForm" @emailSubmitted="contactEmailSent"/>
+            <ContactForm :modal="modal" @open-contact-form="openContactForm"/>
         </section>
         
         <section class="tail"></section>
@@ -39,7 +39,7 @@
             },
             contactEmailSent: function() {
                 this.emailSent = !this.emailSent;
-                console.log('form has been clicked! ' + this.emailSent);
+                console.log( 'contactEmailSent ' +  'form has been clicked! ' + this.emailSent);
             }
         }
     }

@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import emailjs from 'emailjs-com';
+// import emailjs from 'emailjs-com';
 
 export default {
     name: 'ContactForm',
@@ -44,17 +44,21 @@ export default {
     },
     methods: {
         contactEmailSent: function() {
-            // this.$emit('emailSubmitted');
-            console.log('fgkjrsglrlksgkl')
+            this.emailSent = !this.emailSent;
+            console.log( 'contactEmailSent ' +  'form has been clicked! ' + this.emailSent);
         },
-        sendEmail: (e) => {
-            this.contactEmailSent();
-            emailjs.sendForm('service_6w3urpt', 'template_tmd0fes', e.target, 'user_6yh7gv0e3ksC61YIxijVT')
-                .then((result) => {
-                    console.log('SUCCESS!', result.status, result.text);
-                }, (error) => {
-                    console.log('FAILED...', error);
-                });
+        sendEmail: () => {
+            var that = this;
+            that.contactEmailSent();
+            // emailjs.sendForm('service_6w3urpt', 'template_tmd0fes', e.target, 'user_6yh7gv0e3ksC61YIxijVT')
+            //     .then((result) => {
+            //         console.log('SUCCESS!', result.status, result.text);
+            //     }, (error) => {
+            //         console.log('FAILED...', error);
+            //     })
+            //     .then(() => {
+            //         _this.contactEmailSent();
+            //     });
         }
     }
 }
