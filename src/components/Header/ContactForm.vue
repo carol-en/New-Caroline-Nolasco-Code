@@ -1,9 +1,10 @@
 <template>
 <section>
   <aside class="contact" v-bind:class="{ active: modal }">
-      <h2>Contact Me!</h2>
-      
-    <form class="form" @submit.prevent="sendEmail">
+      <h2 v-if="emailSent">Thank You For Your Email!</h2>
+
+    <form class="form" @submit.prevent="sendEmail" v-else>
+        <h2>Contact Me!</h2>
         <div class="form-control">
             <span class="form-label"><label for="name">Name</label></span>
             <input type="text" id="name" name="name" required placeholder="John Smith" />        
@@ -30,35 +31,26 @@
 </template>
 
 <script>
-// import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com';
 
 export default {
     name: 'ContactForm',
-    data() {
-        return {
-            emailSent: false
-        }
-    },
     props: {
-        modal: Boolean
+        modal: Boolean,
+        emailSent: Boolean
     },
     methods: {
         contactEmailSent: function() {
-            this.emailSent = !this.emailSent;
-            console.log( 'contactEmailSent ' +  'form has been clicked! ' + this.emailSent);
+            this.$emit('email-sent');
         },
-        sendEmail: () => {
-            var that = this;
-            that.contactEmailSent();
-            // emailjs.sendForm('service_6w3urpt', 'template_tmd0fes', e.target, 'user_6yh7gv0e3ksC61YIxijVT')
-            //     .then((result) => {
-            //         console.log('SUCCESS!', result.status, result.text);
-            //     }, (error) => {
-            //         console.log('FAILED...', error);
-            //     })
-            //     .then(() => {
-            //         _this.contactEmailSent();
-            //     });
+        sendEmail: function(e) {
+            emailjs.sendForm('service_6w3urpt', 'template_tmd0fes', e.target, 'user_6yh7gv0e3ksC61YIxijVT')
+                .then((result) => {
+                    console.log('SUCCESS!', result.status, result.text);
+                    this.contactEmailSent();
+                }, (error) => {
+                    console.log('FAILED...', error);
+                });
         }
     }
 }
