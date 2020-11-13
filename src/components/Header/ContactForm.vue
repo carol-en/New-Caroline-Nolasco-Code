@@ -1,28 +1,31 @@
 <template>
 <section>
   <aside class="contact" v-bind:class="{ active: modal }">
-      <h2 v-if="emailSent">Thank You For Your Email!</h2>
+
+    <span class="close-form" v-on:click="$emit('open-contact-form')">X</span>    
+
+    <h2 v-if="emailSent">Thank You For Your Email!</h2>
 
     <form class="form" @submit.prevent="sendEmail" v-else>
         <h2>Contact Me!</h2>
         <div class="form-control">
             <span class="form-label"><label for="name">Name</label></span>
-            <input type="text" id="name" name="name" required placeholder="John Smith" />        
+            <input v-model="name" type="text" id="name" name="name" required placeholder="John Smith" />        
         </div>
 
         <div class="form-control">
             <span class="form-label"><label for="email">Email</label></span>
-            <input type="email" id="email" name="email" required placeholder="you@me.com"/>        
+            <input v-model="email" type="email" id="email" name="email" required placeholder="you@me.com"/>        
         </div>
 
         <div class="form-control">
             <span class="form-label"><label for="message">Message</label></span>
-            <textarea name="message" id="message" required placeholder="Hello there!"></textarea>        
+            <textarea v-model="message" name="message" id="message" required placeholder="Hello there!"></textarea>        
         </div>
 
         <div class="form-control">
             <button type="submit" class="form-btn">Send!</button>
-            <button class="form-btn">Reset</button>
+            <button class="form-btn" v-on:click="resetForm">Reset</button>
         </div>
     </form>
   </aside>
@@ -35,6 +38,13 @@ import emailjs from 'emailjs-com';
 
 export default {
     name: 'ContactForm',
+    data() {
+        return {
+            name: '',
+            email: '',
+            message: ''
+        }
+    },
     props: {
         modal: Boolean,
         emailSent: Boolean
@@ -51,6 +61,12 @@ export default {
                 }, (error) => {
                     console.log('FAILED...', error);
                 });
+        },
+        resetForm: function(e) {
+            e.preventDefault();           
+            this.name = '';
+            this.email = '';
+            this.message = '';
         }
     }
 }
@@ -88,6 +104,25 @@ export default {
         text-transform: uppercase;
         font-family: $header-font;
         color: $green-bg;
+    }
+
+    .close-form {
+        color: $green-bg;
+        background: $white-color;
+        cursor: pointer;
+        font-weight: bold;
+        padding: .35em .85em;
+        font-size: .5em;
+        float: right;
+        border-radius: 100%; 
+        border: .10em solid $light-gray;
+
+    }
+
+    .close-form:hover {
+        background: $pink-bg;
+        color: $white-color;
+        border: .10em solid $pink-bg;
     }
 
     .form {

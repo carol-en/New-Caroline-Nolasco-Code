@@ -35,7 +35,6 @@
         methods: {
             openContactForm: function() { // Toggles pop up contact form open and close
                 this.modal = !this.modal;
-                console.log('modal updated: ' + this.modal);
 
                 // If contact form is open/active & email component is active, turn off
                 if(this.emailSent && this.modal) this.emailSent = false;
@@ -43,7 +42,6 @@
             contactEmailSent: function() { // If email is successfully sent, form gets switched from contact from to a 'thank you message'
                 // If pop up contact component is active & emailSent is set to false, set emailSent to 'true' for successful 'thank you' message
                 if(this.modal && !this.emailSent) this.emailSent = true;
-                console.log( 'contactEmailSent ' +  'form has been clicked! ' + this.emailSent);
             }
         }
     }
