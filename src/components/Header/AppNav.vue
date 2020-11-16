@@ -7,6 +7,7 @@ https://forum.vuejs.org/t/how-to-add-a-open-an-another-component-when-a-button-i
       <section class="inner_navi">
         <button v-on:click="openContactForm">Contact</button>
         <button v-on:click="scrollToProjects">Projects</button>
+        <a href="../../static/resume.pdf" target="_blank" rel="noopener noreferrer">Resumes</a>
         <AppLink title="projects" href="#projects"></AppLink>
         <AppLink title="resume" href="#resume"></AppLink>
       </section>
