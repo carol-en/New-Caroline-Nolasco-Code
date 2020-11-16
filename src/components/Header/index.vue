@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <AppNav @open-contact-form="openContactForm" />
+        <AppNav @open-contact-form="openContactForm" @scroll-to-projects="scrollToProjects"/>
         <section class="inner-header">
             <AppAbout />
             <AppTitle />
@@ -42,6 +42,10 @@
             contactEmailSent: function() { // If email is successfully sent, form gets switched from contact from to a 'thank you message'
                 // If pop up contact component is active & emailSent is set to false, set emailSent to 'true' for successful 'thank you' message
                 if(this.modal && !this.emailSent) this.emailSent = true;
+            },
+            scrollToProjects: function() {
+                const element = document.querySelector(".projects");
+                element.scrollIntoView({ behavior: "smooth" });
             }
         }
     }
