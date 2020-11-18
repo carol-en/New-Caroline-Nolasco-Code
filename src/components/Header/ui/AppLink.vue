@@ -1,14 +1,28 @@
 <template>
-  <a class="navi-links" v-bind:href="href">{{title}}</a>
+  <!-- <a class="navi-links" v-bind:href="href">{{title}}</a> -->
+
+<ul>
+    <li v-for="index in data" :key="index">
+      {{index}}
+      {{index.href}}
+      {{index.title}}
+    </li>
+</ul>
+
 </template>
 
 <script>
 export default {
     name: 'AppLink',
+    // props: {
+    //   title: String,
+    //   href: String
+    // }
     props: {
-      title: String,
-      href: String
+      data: Object
     }
+
+
 }
 </script>
 

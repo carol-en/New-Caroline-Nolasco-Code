@@ -1,15 +1,30 @@
 
 <template>
-<!-- https://vuejs.org/v2/guide/state-management.html 
-https://forum.vuejs.org/t/how-to-add-a-open-an-another-component-when-a-button-is-clicked/26959/2 
--->
+
   <nav class="navigation">
       <section class="inner_navi">
-        <button v-on:click="openContactForm">Contact</button>
-        <button v-on:click="scrollToProjects">Projects</button>
-        <a href="../../static/resume.pdf" target="_blank" rel="noopener noreferrer">Resumes</a>
-        <AppLink title="projects" href="#projects"></AppLink>
-        <AppLink title="resume" href="#resume"></AppLink>
+        <!-- <a href="#projects" v-on:click="scrollToProjects">Projects</a>
+        <a href="#contact" v-on:click="openContactForm">Contact</a>
+        <a href="./resume.pdf" target="_blank" rel="noopener noreferrer">Resumes</a> -->
+
+        <!-- <AppLink href="#projects" title="Projects"/>
+        <AppLink href="#contact" title="Contact"/>
+        <AppLink href="./resume.pdf" title="Resumes"/> -->
+
+        <AppLink v-bind:data='[
+          { 
+            href: "#projects",
+            title: "Projects"
+          }, 
+          {
+            href: "#contact",
+            title: "Contact"
+          }, 
+          {
+            href: "./resume.pdf",
+            title: "Resume"
+          }
+        ]'></AppLink>
       </section>
       
       <section class="inner_navi"> 
@@ -53,12 +68,11 @@ import SocialMedia from './ui/SocialMedia';
 
 
 export default {
-    name: 'AppNav',
+    name: 'AppNav',  
     components: {
         AppLink,
         SocialMedia
-    },
-
+    },  
     props: {
       method: { type: Function },
     },
