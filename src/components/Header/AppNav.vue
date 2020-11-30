@@ -3,28 +3,23 @@
 
   <nav class="navigation">
       <section class="inner_navi">
-        <!-- <a href="#projects" v-on:click="scrollToProjects">Projects</a>
-        <a href="#contact" v-on:click="openContactForm">Contact</a>
-        <a href="./resume.pdf" target="_blank" rel="noopener noreferrer">Resumes</a> -->
 
-        <!-- <AppLink href="#projects" title="Projects"/>
-        <AppLink href="#contact" title="Contact"/>
-        <AppLink href="./resume.pdf" title="Resumes"/> -->
-
-        <AppLink v-bind:data='[
-          { 
-            href: "#projects",
-            title: "Projects"
-          }, 
-          {
-            href: "#contact",
-            title: "Contact"
-          }, 
-          {
-            href: "./resume.pdf",
-            title: "Resume"
-          }
-        ]'></AppLink>
+        <AppLink  @open-contact-form="open-contact-form" @scroll-to-projects="scroll-to-projects" v-bind:data=
+        '{ 
+            projects: {
+              href: "#projects",
+              title: "Projects"
+            }, 
+            contact: {
+              href: "#contact",
+              title: "Contact"
+            }, 
+            resume: {
+              href: "./resume.pdf",
+              title: "Resume"              
+            }
+          }'
+          ></AppLink>
       </section>
       
       <section class="inner_navi"> 
@@ -72,56 +67,22 @@ export default {
     components: {
         AppLink,
         SocialMedia
-    },  
-    props: {
-      method: { type: Function },
-    },
-
-    methods: {
-      openContactForm: function() {
-        this.$emit('open-contact-form');
-      },
-      scrollToProjects: function() {
-        this.$emit('scroll-to-projects');
-      }
     }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     .navigation {
         background: $green-bg;
         display: flex;
+        flex-flow: nowrap row;
         justify-content: space-between;
         align-items: center;
 
        .inner_navi {
         display: flex;
+        flex-flow: nowrap row;
         justify-content: space-evenly;
-
-           a, button {
-            background: $green-bg;
-            border: 0;
-            color: $white-color;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-family: $header2-font;
-            display: block;
-            padding: .35rem 1.15rem;
-        }
-
-        a:hover, 
-        a:active, 
-        a:focus, 
-        a:focus-visible, 
-        button:hover,
-        button:active, 
-        button:focus, 
-        button:focus-visible {
-          text-decoration: underline;
-          color: $pink-bg;
-          outline: none;
-        }
        }
     }
 </style>
