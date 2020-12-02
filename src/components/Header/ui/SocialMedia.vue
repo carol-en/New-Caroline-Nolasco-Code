@@ -26,6 +26,7 @@ export default {
     color: $white-color;
     text-decoration: none;
     font-size: 2em;
+    padding: .35rem 1.15rem;
   }
 
   a:hover.social-media-links, 

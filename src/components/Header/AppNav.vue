@@ -4,7 +4,7 @@
   <nav class="navigation">
       <section class="inner_navi">
 
-        <AppLink  @open-contact-form="open-contact-form" @scroll-to-projects="scroll-to-projects" v-bind:data=
+        <AppLink @open-contact-form="openContactForm" @scroll-to-projects="scrollToProjects" v-bind:data=
         '{ 
             projects: {
               href: "#projects",
@@ -67,17 +67,35 @@ export default {
     components: {
         AppLink,
         SocialMedia
-    }
+    },
+
+    props: {
+      method: { type: Function }
+    },  
+
+    methods: {
+      openContactForm: function() {
+        this.$emit('open-contact-form');
+      },
+      scrollToProjects: function() {
+        this.$emit('scroll-to-projects');
+      }
+    }    
 }
 </script>
 
 <style lang="scss">
     .navigation {
+        width: 100%;
         background: $green-bg;
         display: flex;
         flex-flow: nowrap row;
         justify-content: space-between;
         align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 5;
+
 
        .inner_navi {
         display: flex;

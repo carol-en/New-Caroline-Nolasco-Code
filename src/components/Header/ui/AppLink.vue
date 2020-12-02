@@ -1,9 +1,9 @@
 
 <template>
   <Fragment>
-    <a class="navi-links" v-bind:href="projects.href">{{projects.title}}</a>
-    <a class="navi-links" v-bind:href="contact.href">{{contact.title}}</a>
-    <a class="navi-links" v-bind:href="resume.href">{{resume.title}}</a>
+    <a class="navi-links" v-bind:href="resume.href" target="_blank" rel="noopener noreferrer">{{resume.title}}</a>
+    <a class="navi-links" v-bind:href="projects.href" v-on:click="scrollToProjects">{{projects.title}}</a>
+    <a class="navi-links" v-bind:href="contact.href" v-on:click="openContactForm">{{contact.title}}</a>
   </Fragment>
 </template>
 
@@ -14,7 +14,7 @@ export default {
     components: { Fragment },
     props: {
       data: Object,
-      method: { type: Function },
+      method: { type: Function }
     },
     data() {
       return {
@@ -32,8 +32,6 @@ export default {
         this.$emit('scroll-to-projects');
       }
     }
-
-
 }
 </script>
 
