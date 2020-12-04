@@ -1,12 +1,18 @@
 <template>
     <footer>
+        <BackToTopBtn />
         <h1>Footer Component Begins Here</h1>
     </footer>
 </template>
 
 <script>
+import BackToTopBtn from './ui/BackToTopBtn';
+
     export default {
-        name: 'AppFooter'
+        name: 'AppFooter',
+        components: {
+            BackToTopBtn
+        }
     }
 </script>
 
