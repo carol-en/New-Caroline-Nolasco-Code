@@ -1,6 +1,6 @@
 <template>
   <Fragment>
-      <button v-on:click="backToTop" class="back-to-top">
+      <button v-on:click="backToTop" v-if="checkIfUpdated(this.scrolledDown)" class="back-to-top">
           Back To Top
       </button>
   </Fragment>
@@ -15,26 +15,45 @@ export default {
     components: { Fragment },
     data() {
         return {
-            scrollDown: false
+            scrolledDown: false
         }
+    },
+
+    mounted() {
+    this.trackScroll();
     },
 
     methods: {
         backToTop: function(e) {
-            // const element = document.querySelector("header");
             e.preventDefault();
-
-            this.trackScroll();
-            // element.scrollIntoView({ behavior: "smooth" });       
+            // this.trackScroll();
+            scrollTo(0,0);    
             
             console.log('Back To Top Clicked');
         },
         trackScroll: function() {
-            let height =  window.innerHeight;
+            window.onscroll =  function() {
+            let windowHeight = window.innerHeight;
+            let scrollHeight = document.documentElement.scrollTop;
 
-            console.log(height);
+            if(scrollHeight < windowHeight) {
+                console.log('You have not scroll passed browser height', this.scrolledDown);
+                if(this.scrolledDown) this.scrolledDown = false;
+                }
+            else if (scrollHeight >= windowHeight) {
+                console.log('Scrolling passed browse height!!!', this.scrolledDown);
+                if(!this.scrolledDown) this.scrolledDown = true;
+                }
+                
+            }
         }
     },
+    computed: {
+        checkIfUpdated(scrollHeight) {
+            console.log(scrollHeight)
+            return scrollHeight;
+        }
+    }
 }
 </script>
 <style scoped lang="scss">
