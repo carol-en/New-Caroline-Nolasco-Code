@@ -16,6 +16,7 @@ export default {
     data() {
         return {
             scrolledDown: false
+            // test
         }
     },
 
@@ -31,6 +32,7 @@ export default {
             
             console.log('Back To Top Clicked');
         },
+
         trackScroll: function() {
             window.onscroll =  function() {
             let windowHeight = window.innerHeight;
@@ -38,22 +40,23 @@ export default {
 
             if(scrollHeight < windowHeight) {
                 console.log('You have not scroll passed browser height', this.scrolledDown);
-                if(this.scrolledDown) this.scrolledDown = false;
+                if(this.scrolledDown || this.scrolledDown === undefined) this.scrolledDown = false;
                 }
             else if (scrollHeight >= windowHeight) {
                 console.log('Scrolling passed browse height!!!', this.scrolledDown);
                 if(!this.scrolledDown) this.scrolledDown = true;
                 }
-                
             }
-        }
+        }       
     },
-    computed: {
-        checkIfUpdated(scrollHeight) {
-            console.log(scrollHeight)
-            return scrollHeight;
-        }
-    }
+ computed: {
+     checkIfUpdated() {
+         return (scrollState) => {
+         console.log("from checkIfUpdated " + scrollState);
+         return scrollState;                
+         }
+     }
+ }
 }
 </script>
 <style scoped lang="scss">
