@@ -1,6 +1,6 @@
 <template>
   <Fragment>
-      <button v-on:click="backToTop" v-if="checkIfUpdated(this.scrolledDown)" class="back-to-top">
+      <button v-on:click="backToTop" v-show="scrolledDown" class="back-to-top">
           Back To Top
       </button>
   </Fragment>
@@ -16,7 +16,6 @@ export default {
     data() {
         return {
             scrolledDown: false
-            // test
         }
     },
 
@@ -27,7 +26,6 @@ export default {
     methods: {
         backToTop: function(e) {
             e.preventDefault();
-            // this.trackScroll();
             scrollTo(0,0);    
             
             console.log('Back To Top Clicked');
@@ -35,28 +33,14 @@ export default {
 
         trackScroll: function() {
             window.onscroll =  function() {
-            let windowHeight = window.innerHeight;
-            let scrollHeight = document.documentElement.scrollTop;
+            // let windowHeight = window.innerHeight;
+            let scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;
 
-            if(scrollHeight < windowHeight) {
-                console.log('You have not scroll passed browser height', this.scrolledDown);
-                if(this.scrolledDown || this.scrolledDown === undefined) this.scrolledDown = false;
-                }
-            else if (scrollHeight >= windowHeight) {
-                console.log('Scrolling passed browse height!!!', this.scrolledDown);
-                if(!this.scrolledDown) this.scrolledDown = true;
-                }
+            console.log(this.scrolledDown, scrollHeight);
+
             }
         }       
-    },
- computed: {
-     checkIfUpdated() {
-         return (scrollState) => {
-         console.log("from checkIfUpdated " + scrollState);
-         return scrollState;                
-         }
-     }
- }
+    }
 }
 </script>
 <style scoped lang="scss">
