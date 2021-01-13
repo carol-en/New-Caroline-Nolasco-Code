@@ -29,7 +29,9 @@
         </div>
     </form>
   </aside>
-  <div class="fixed" v-bind:class="{ active: modal }" v-on:click="$emit('open-contact-form')"></div>
+  <transition name="fading">
+    <div class="fixed" v-bind:class="{ active: modal }" v-on:click="$emit('open-contact-form')"></div>
+  </transition>
 </section>
 </template>
 
@@ -73,6 +75,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.fading-enter-active, .fading-leave-active {
+    transition: all .7s ease;
+}
+.fading-enter, .fading-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    }
 .fixed {
     width: 100%;
     height: 100%;

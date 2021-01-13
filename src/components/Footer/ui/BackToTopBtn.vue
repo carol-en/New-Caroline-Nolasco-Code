@@ -53,10 +53,11 @@ export default {
 </script>
 <style scoped lang="scss">
     .fading-enter-active, .fading-leave-active {
-    transition: opacity .5s;
+        transition: all .8s ease;
     }
-    .fading-enter, .fading-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
+   
+    .fading-enter, .fading-leave-to /* .fade-leave-active below version 2.1.8 */  {
+        opacity: 0;
     }
     .back-to-top {
         background: $pink-bg;
