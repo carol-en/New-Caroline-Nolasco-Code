@@ -1,14 +1,18 @@
 <template>
-  <a class="social-media-links"
-   v-bind:href="href" v-bind:title="title"
-   target="_blank" rel="noopener noreferrer"> 
-    <i v-bind:class="[icons.type, icons.name]"></i>
-  </a>
+  <Fragment>
+      <a class="social-media-links"
+      v-bind:href="href" v-bind:title="title"
+      target="_blank" rel="noopener noreferrer"> 
+        <i v-bind:class="[icons.type, icons.name]"></i>
+      </a>
+  </Fragment>
 </template>
 
 <script>
+import { Fragment } from 'vue-fragment';
 export default {
     name: 'SocialMedia',
+    components: { Fragment },
     props: {
       title: String,
       href: String,
@@ -22,6 +26,7 @@ export default {
     color: $white-color;
     text-decoration: none;
     font-size: 2em;
+    padding: .35rem 1.15rem;
   }
 
   a:hover.social-media-links, 

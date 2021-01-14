@@ -1,12 +1,25 @@
 
 <template>
-<!-- https://vuejs.org/v2/guide/state-management.html -->
+
   <nav class="navigation">
       <section class="inner_navi">
-        <span v-on:click="test()">Contact Me!</span>
-        <AppLink title="contact" href="#contact"></AppLink>
-        <AppLink title="projects" href="#projects"></AppLink>
-        <AppLink title="resume" href="#resume"></AppLink>
+
+        <AppLink @open-contact-form="openContactForm" @scroll-to-projects="scrollToProjects" v-bind:data=
+        '{ 
+            projects: {
+              href: "#projects",
+              title: "Projects"
+            }, 
+            contact: {
+              href: "#contact",
+              title: "Contact"
+            }, 
+            resume: {
+              href: "./resume.pdf",
+              title: "Resume"              
+            }
+          }'
+          ></AppLink>
       </section>
       
       <section class="inner_navi"> 
@@ -50,41 +63,44 @@ import SocialMedia from './ui/SocialMedia';
 
 
 export default {
-    name: 'AppNav',
+    name: 'AppNav',  
     components: {
         AppLink,
         SocialMedia
     },
+
+    props: {
+      method: { type: Function }
+    },  
+
     methods: {
-      test: function() {
-        alert('this is a test for methods!!!');
+      openContactForm: function() {
+        this.$emit('open-contact-form');
+      },
+      scrollToProjects: function() {
+        this.$emit('scroll-to-projects');
       }
-    }
+    }    
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     .navigation {
+        width: 100%;
         background: $green-bg;
         display: flex;
+        flex-flow: nowrap row;
         justify-content: space-between;
         align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 5;
+
 
        .inner_navi {
         display: flex;
+        flex-flow: nowrap row;
         justify-content: space-evenly;
-
-           a, span {
-            text-transform: uppercase;
-            font-family: $header2-font;
-            display: block;
-            padding: .35rem 1.15rem;
-        }
-
-        span {
-          cursor: pointer;
-          color: $white-color;
-        }
        }
     }
 </style>

@@ -1,10 +1,12 @@
 <template>
     <header class="header">
-        <AppNav />
+        <AppNav @open-contact-form="openContactForm" @scroll-to-projects="scrollToProjects"/>
         <section class="inner-header">
             <AppAbout />
             <AppTitle />
+            <ContactForm :modal="modal" :emailSent="emailSent" @open-contact-form="openContactForm" @email-sent="contactEmailSent"/>
         </section>
+        
         <section class="tail"></section>
     </header>
 
@@ -14,13 +16,37 @@
     import AppNav from './AppNav';
     import AppAbout from './AppAbout';
     import AppTitle from './AppTitle';
+    import ContactForm from './ContactForm';
     
     export default {
         name: 'AppHeader',
         components: {
             AppNav,
             AppAbout,
-            AppTitle
+            AppTitle,
+            ContactForm
+        },
+        data() {
+            return {
+                modal: false,
+                emailSent: false
+            }
+        },
+        methods: {
+            openContactForm: function() { // Toggles pop up contact form open and close
+                this.modal = !this.modal;
+
+                // If contact form is open/active & email component is active, turn off
+                if(this.emailSent && this.modal) this.emailSent = false;
+            },
+            contactEmailSent: function() { // If email is successfully sent, form gets switched from contact from to a 'thank you message'
+                // If pop up contact component is active & emailSent is set to false, set emailSent to 'true' for successful 'thank you' message
+                if(this.modal && !this.emailSent) this.emailSent = true;
+            },
+            scrollToProjects: function() {
+                const element = document.querySelector(".projects");
+                element.scrollIntoView({ behavior: "smooth" });
+            }
         }
     }
 </script>

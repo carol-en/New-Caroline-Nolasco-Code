@@ -1,22 +1,49 @@
+
 <template>
-  <a class="navi-links" v-bind:href="href">{{title}}</a>
+  <Fragment>
+    <a class="navi-links" v-bind:href="resume.href" target="_blank" rel="noopener noreferrer">{{resume.title}}</a>
+    <a class="navi-links" v-bind:href="projects.href" v-on:click="scrollToProjects">{{projects.title}}</a>
+    <a class="navi-links" v-bind:href="contact.href" v-on:click="openContactForm">{{contact.title}}</a>
+  </Fragment>
 </template>
 
 <script>
+import { Fragment } from 'vue-fragment';
 export default {
     name: 'AppLink',
+    components: { Fragment },
     props: {
-      title: String,
-      href: String
+      data: Object,
+      method: { type: Function }
+    },
+    data() {
+      return {
+        projects: this.data.projects,
+        contact: this.data.contact,
+        resume: this.data.resume
+      }
+    },
+
+    methods: {
+      openContactForm: function() {
+        this.$emit('open-contact-form');
+      },
+      scrollToProjects: function() {
+        this.$emit('scroll-to-projects');
+      }
     }
 }
 </script>
 
 <style scoped lang="scss">
   a.navi-links {
+    background: $green-bg;
+    border: 0;
     color: $white-color;
-    font-size: .85em;
-    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: $header2-font;
+    padding: .35rem 1.15rem;
   }
 
   a.navi-links:hover, 
@@ -24,7 +51,7 @@ export default {
   a.navi-links:focus, 
   a.navi-links:focus-visible {
     text-decoration: underline;
-    outline: none;
     color: $pink-bg;
+    outline: none;
   }
 </style>
