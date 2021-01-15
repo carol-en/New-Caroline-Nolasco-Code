@@ -67,6 +67,7 @@
         flex-flow: row wrap;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
 
         .about {
             order: 2;

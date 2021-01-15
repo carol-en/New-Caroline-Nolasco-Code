@@ -92,7 +92,7 @@ export default {
         flex-flow: nowrap row;
         justify-content: space-between;
         align-items: center;
-        position: fixed;
+        position: sticky;
         top: 0;
         z-index: 5;
 
