@@ -1,6 +1,7 @@
 <template>
 <section>
-  <aside class="contact" v-bind:class="{ active: modal }">
+<transition-group name="fading">
+  <aside class="contact" v-show="modal" key="form">
 
     <span class="close-form" v-on:click="$emit('open-contact-form')">X</span>    
 
@@ -29,9 +30,12 @@
         </div>
     </form>
   </aside>
+</transition-group>
+
   <transition name="fading">
-    <div class="fixed" v-bind:class="{ active: modal }" v-on:click="$emit('open-contact-form')"></div>
+    <div class="fixed" v-show="modal" v-on:click="$emit('open-contact-form')"></div>
   </transition>
+  
 </section>
 </template>
 
@@ -76,7 +80,7 @@ export default {
 
 <style scoped lang="scss">
 .fading-enter-active, .fading-leave-active {
-    transition: all .7s ease;
+    transition: all .75s ease;
 }
 .fading-enter, .fading-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
@@ -85,7 +89,6 @@ export default {
     width: 100%;
     height: 100%;
     background: rgba($white-color, .3);
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -95,7 +98,6 @@ export default {
 .contact {
     background: $light-bg;
     color: $accent-font-color;
-    display: none;
     width: 45%;
     padding: 1.5rem;
     position: fixed;
@@ -192,10 +194,6 @@ export default {
             border-right: 1em solid $pink-bg;
         }
     }
-}
-
-.active {
-    display: block;
 }
 
 </style>

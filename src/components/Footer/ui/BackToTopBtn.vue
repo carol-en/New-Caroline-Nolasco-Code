@@ -63,8 +63,8 @@ export default {
         width: 3em;
         height: 3em;
         position: fixed;
-        bottom: 1em;
         right: 1em;
+        bottom: -5em;
         z-index: 6;
     }
 
@@ -80,6 +80,7 @@ export default {
 
   .active {
       opacity: 1;
+      bottom: 1em;
   }
 
 .fade-enter-active, .fade-leave-active {
