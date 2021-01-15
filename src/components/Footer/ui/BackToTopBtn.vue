@@ -1,12 +1,11 @@
 <template>
   <Fragment>
-      <transition name="fading">
-      <button v-on:click="backToTop" v-show="scrolledDown" class="back-to-top">
-          <i class="fas fa-arrow-up"></i>
-      </button>
+      <transition name="fade">
+        <button v-on:click="backToTop"  v-bind:class="[{ active: show }, 'back-to-top', ]">
+            <i class="fas fa-arrow-up"></i>
+        </button>
       </transition>
   </Fragment>
-
 </template>
 
 <script>
@@ -17,7 +16,7 @@ export default {
     components: { Fragment },
     data() {
         return {
-            scrolledDown: false
+            show: false
         }
     },
 
@@ -41,10 +40,10 @@ export default {
                 let scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;
 
                 if(scrollHeight <= windowHeight) { // If page is at top is at the top & less than half of browser height
-                    if(this.scrolledDown === true) this.scrolledDown = false; // button is vanish
+                    if(this.show === true) this.show = false; // button is vanish
                 }
                 else if(scrollHeight > windowHeight) { // If page isn't at top and further down than half the browser page height
-                    if(this.scrolledDown === false) this.scrolledDown = true; // button will appear
+                    if(this.show === false) this.show = true; // button will appear
                 }                
             }
         }       
@@ -52,13 +51,6 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-    .fading-enter-active, .fading-leave-active {
-        transition: all .8s ease;
-    }
-   
-    .fading-enter, .fading-leave-to /* .fade-leave-active below version 2.1.8 */  {
-        opacity: 0;
-    }
     .back-to-top {
         background: $pink-bg;
         color: $accent-font-color;
@@ -66,7 +58,8 @@ export default {
         border-radius: 51%; 
         border: 0 solid $white-color;
         font-size: 1em;
-        transition: all .09s ease-in-out;
+        transition: all .5s ease-in-out;
+        opacity: 0;
         width: 3em;
         height: 3em;
         position: fixed;
@@ -84,4 +77,16 @@ export default {
       color:  $pink-bg;
       outline: none;
   }    
+
+  .active {
+      opacity: 1;
+  }
+
+.fade-enter-active, .fade-leave-active {
+      transition: opacity .5s ease;
+  }
+
+.fade-enter, .fade-leave-to, .fade-leave /* .fade-leave-active below version 2.1.8 */  {
+      opacity: 0;
+  }
 </style>
