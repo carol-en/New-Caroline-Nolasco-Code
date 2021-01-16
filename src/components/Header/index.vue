@@ -97,6 +97,4 @@
                 border-width: 2em 2em 0 2em;
         }
     }
-
-
 </style>

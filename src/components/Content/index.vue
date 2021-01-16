@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main class="content">
         <AppProjects />
     </main>
 </template>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    main {
+    .content {
         background: $app-bg;
     }
 </style>
