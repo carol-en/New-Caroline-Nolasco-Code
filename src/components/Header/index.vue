@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <AppNav @open-contact-form="openContactForm" @scroll-to-projects="scrollToProjects"/>
+    <AppNav @open-contact-form="openContactForm" @scroll-to-projects="scrollToProjects"/>
         <section class="inner-header">
             <AppAbout />
             <AppTitle />
@@ -9,7 +9,6 @@
         
         <section class="tail"></section>
     </header>
-
 </template>
 
 <script>
@@ -52,6 +51,7 @@
 </script>
 
 <style scoped lang="scss">
+
     .inner-header {
         background: $pink-bg url('./assets/banner_default.png')no-repeat right;
         -webkit-background-size: cover;
