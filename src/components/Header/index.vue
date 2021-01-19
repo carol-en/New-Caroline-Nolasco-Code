@@ -1,10 +1,10 @@
 <template>
     <header class="header">
     <AppNav @open-contact-form="openContactForm" @scroll-to-projects="scrollToProjects"/>
+    <ContactForm :modal="modal" :emailSent="emailSent" @open-contact-form="openContactForm" @email-sent="contactEmailSent"/>
         <section class="inner-header">
             <AppAbout />
             <AppTitle />
-            <ContactForm :modal="modal" :emailSent="emailSent" @open-contact-form="openContactForm" @email-sent="contactEmailSent"/>
         </section>
         
         <section class="tail"></section>
@@ -51,6 +51,21 @@
 </script>
 
 <style scoped lang="scss">
+    .header {
+        position: relative;
+        z-index: 4;
+
+        .tail {
+                position: absolute;  
+                border-color: $pink-bg transparent transparent transparent; 
+                left: 50%;
+                bottom: -2.5rem;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 2em 2em 0 2em;
+        }
+    }
 
     .inner-header {
         background: $pink-bg url('./assets/banner_default.png')no-repeat right;
@@ -65,36 +80,21 @@
         height: 50vh;
         display: flex;
         flex-flow: row wrap;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         overflow: hidden;
 
         .about {
-            order: 2;
+            order: 1;
             flex: 1;
             padding: 3rem 0 3rem 3rem;
         }
 
         .title {
-            order: 3;
+            order: 2;
             flex: 1;
             padding: 3rem 3rem 3rem 0;
-        }
-    }
-
-    .header {
-        position: relative;
-        z-index: 4;
-
-        .tail {
-                position: absolute;  
-                border-color: $pink-bg transparent transparent transparent; 
-                left: 50%;
-                bottom: -2.5rem;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 2em 2em 0 2em;
+            align-self: center;
         }
     }
 </style>

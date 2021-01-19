@@ -18,7 +18,7 @@ export default {
         text-align: center;
         text-transform: uppercase;
         font-family: $header-font;
-        font-size: 2em;
+        font-size: 170%;
         letter-spacing: .05em;
 
         span {
