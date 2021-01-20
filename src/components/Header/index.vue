@@ -57,6 +57,7 @@
 
         .tail {
                 position: absolute;  
+                // border-image: url('./assets/banner_color.png');
                 border-color: $pink-bg transparent transparent transparent; 
                 left: 50%;
                 bottom: -2.5rem;
@@ -68,7 +69,7 @@
     }
 
     .inner-header {
-        background: $pink-bg url('./assets/banner_default.png')no-repeat right;
+        background: url('./assets/banner_default.png')no-repeat bottom right, url('./assets/banner_color.png')repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -83,6 +84,11 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
+
+        @media screen and ( min-width: $xlg-screen ) {
+            background-size: auto;
+        }
+
 
         .about {
             order: 1;

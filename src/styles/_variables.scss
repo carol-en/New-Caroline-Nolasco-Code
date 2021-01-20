@@ -11,7 +11,7 @@
 $primary-font-color: #3a5155;
 $accent-font-color: #fff;
 $green-bg: #3a5155;
-$pink-bg: #FD7878;
+$pink-bg: #ff7070;
 $light-bg: #f7fff7; 
 $app-bg: #fff;
 $light-gray: #dedede;
@@ -24,3 +24,17 @@ $white-color: #fff;
 $content-font: 'Noto Sans JP', sans-serif;
 $header-font:  'Lora', serif;
 $header2-font: 'Roboto Mono', monospace;
+
+
+//==========================
+// MEDIA QUERIES
+//==========================
+
+$xlg-screen: 2000px;
+$lg-screen: 1389px;
+$md-screen: 950px;
+$sm-screen: 700px;
+$xs-screen: 475px;
+$xxs-screen: 350px;
+
+
