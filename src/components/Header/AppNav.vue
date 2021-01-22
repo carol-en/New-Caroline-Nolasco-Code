@@ -92,13 +92,16 @@ export default {
         flex-flow: nowrap row;
         justify-content: space-between;
         align-items: center;
-        top: 0;
 
+        @media screen and ( max-width: $sm-screen ) {
+          flex-flow: nowrap column;
+        }
 
        .inner_navi {
         display: flex;
         flex-flow: nowrap row;
         justify-content: space-evenly;
+
        }
     }
 </style>

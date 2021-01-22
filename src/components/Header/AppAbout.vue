@@ -24,6 +24,11 @@ export default {
             line-height: 1.75em;
             font-size: .85em;
             font-weight: lighter;
+
+            @media screen and ( max-width: $sm-screen ) {
+                width: 100%;
+                font-size: .75em;
+            }
         }
 
         h2 {
@@ -34,6 +39,10 @@ export default {
             text-shadow: -1px 0 $white-color, 
               0 1px $white-color, 1px 0 $white-color, 
               0 -1px $white-color;
+
+              @media screen and ( max-width: $sm-screen ) {
+                  font-size: 1.75em;
+              }
         }
     }
 </style>

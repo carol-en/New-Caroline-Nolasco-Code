@@ -102,17 +102,30 @@ export default {
         padding: 3rem;
         z-index: auto;
 
+        @media screen and ( max-width: $sm-screen ) {
+          padding: 1rem;
+        }        
+
         .prj-data {
             flex: 1;
+
+            @media screen and ( max-width: $sm-screen ) {
+            flex: 3;
+            font-size: .90em;
+            }            
 
             h2 {
                 font-family: $header-font;
                 font-size: 1.8em;
                 letter-spacing: .08em;
+
+                @media screen and ( max-width: $sm-screen ) {
+                    font-size: 1.25em;
+                }
             }
 
             p {
-                font-size: .75em;
+                font-size: .75em;              
             }
         }
 

@@ -57,7 +57,6 @@
 
         .tail {
                 position: absolute;  
-                // border-image: url('./assets/banner_color.png');
                 border-color: $pink-bg transparent transparent transparent; 
                 left: 50%;
                 bottom: -2.5rem;
@@ -85,8 +84,12 @@
         align-items: center;
         overflow: hidden;
 
-        @media screen and ( min-width: $xlg-screen ) {
-            background-size: auto;
+        @media screen and ( max-width: $sm-screen ) {
+            background: $pink-bg url('./assets/banner_color.png')repeat;
+            flex-flow: column;
+            height: auto;
+            text-align: center;
+            padding: 1rem;
         }
 
 
@@ -94,6 +97,11 @@
             order: 1;
             flex: 1;
             padding: 3rem 0 3rem 3rem;
+
+            @media screen and ( max-width: $sm-screen ) {
+                order: 2;
+                padding: 0;
+            }
         }
 
         .title {
@@ -101,6 +109,11 @@
             flex: 1;
             padding: 3rem 3rem 3rem 0;
             align-self: center;
+
+            @media screen and ( max-width: $sm-screen ) {
+                order: 1;
+                padding: 0;
+            }
         }
     }
 </style>
