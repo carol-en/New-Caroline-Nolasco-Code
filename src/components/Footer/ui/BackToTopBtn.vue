@@ -66,6 +66,10 @@ export default {
         right: 1em;
         bottom: -5em;
         z-index: 6;
+
+        @media screen and ( max-width: $sm-screen ) {
+            font-size: .75em;
+        }
     }
 
   .back-to-top:hover, 

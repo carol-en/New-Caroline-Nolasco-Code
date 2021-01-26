@@ -103,15 +103,17 @@ export default {
         z-index: auto;
 
         @media screen and ( max-width: $sm-screen ) {
-          padding: 1rem;
+          padding: 2.5rem 1rem 2rem 1rem;
+          flex-flow: column nowrap;
         }        
 
         .prj-data {
             flex: 1;
 
             @media screen and ( max-width: $sm-screen ) {
-            flex: 3;
-            font-size: .90em;
+            text-align: center;
+            font-size: .80em;
+            width: 100%;
             }            
 
             h2 {
@@ -120,17 +122,28 @@ export default {
                 letter-spacing: .08em;
 
                 @media screen and ( max-width: $sm-screen ) {
-                    font-size: 1.25em;
+                    margin-bottom: .80rem;
                 }
+
             }
 
             p {
-                font-size: .75em;              
+                font-size: .75em;    
+
+                @media screen and ( max-width: $sm-screen ) {
+                    line-height: 1.5rem;
+                }          
             }
         }
 
         .prj-thumbnil {
             flex: 1;
+            padding-top: 0;
+
+            @media screen and ( max-width: $sm-screen ) {
+                width: 100%;
+                padding-top: 2rem;
+            }
 
             figure {
                 img {
@@ -149,6 +162,12 @@ export default {
             border-style: solid;
             border-width: 2em 2em 0 2em;
             z-index: 2;
+
+            @media screen and ( max-width: $sm-screen ) {
+                border-width: 1.25em 1.25em 0 1.25em;
+                left: 45%;
+                bottom: -1.55rem;
+            }
         }   
     }
     
@@ -162,10 +181,28 @@ export default {
             order: 2;
             z-index: 2;
 
+            @media screen and ( max-width: $sm-screen ) {
+                order: 1;
+                text-align: center;
+            }
+
             p {
                 margin: 2em 0 0 3em;
+
+                @media screen and ( max-width: $sm-screen ) {
+                    margin: 0;
+                }
             }
         }
+
+        .prj-thumbnil {
+            order: 1;
+
+            @media screen and ( max-width: $sm-screen ) {
+                order: 2;
+            }
+        }
+
         .tail {
             border-color: $green-bg transparent transparent transparent;   
         }
@@ -178,12 +215,26 @@ export default {
     text-align: left;
 
         .prj-data {
+            order: 1;
+            @media screen and ( max-width: $sm-screen ) {
+                text-align: center;
+            }
+
+
             p {
             margin: 2em 3em 0 0; 
+
+            @media screen and ( max-width: $sm-screen ) {
+                margin: 0;
+            }
             }
         }
         .prj-thumbnil {
-            order: 1;
+            order: 2;
+
+            @media screen and ( max-width: $sm-screen ) {
+                order: 2;
+            }
         }
         .tail {
             border-color: $light-bg transparent transparent transparent;   

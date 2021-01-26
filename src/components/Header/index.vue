@@ -64,6 +64,12 @@
                 height: 0;
                 border-style: solid;
                 border-width: 2em 2em 0 2em;
+                
+                @media screen and ( max-width: $sm-screen ) {
+                    border-width: 1.25em 1.25em 0 1.25em;
+                    left: 45%;
+                    bottom: -1.55rem;
+                }                
         }
     }
 
@@ -89,7 +95,7 @@
             flex-flow: column;
             height: auto;
             text-align: center;
-            padding: 1rem;
+            padding: 1rem 1rem 2rem 1rem;
         }
 
 
