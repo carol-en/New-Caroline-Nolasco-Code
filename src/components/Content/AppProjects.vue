@@ -102,6 +102,10 @@ export default {
         padding: 3rem;
         z-index: auto;
 
+        @media screen and ( max-width: $lg-screen ) {
+            font-size: 1.15em;
+        }
+
         @media screen and ( max-width: $sm-screen ) {
           padding: 2.5rem 1rem 2rem 1rem;
           flex-flow: column nowrap;

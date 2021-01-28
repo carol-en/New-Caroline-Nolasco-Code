@@ -94,6 +94,10 @@ export default {
         justify-content: space-between;
         align-items: center;
 
+        @media screen and ( max-width: $lg-screen ) {
+          font-size: 1.25em;
+        }
+
         @media screen and ( max-width: $sm-screen ) {
           font-size: .75em;
           flex-flow: nowrap column;
@@ -102,7 +106,18 @@ export default {
        .inner_navi {
         display: flex;
         flex-flow: nowrap row;
-        justify-content: space-between;
+        justify-content: space-between; 
+        
+        @media screen and ( max-width: $sm-screen ) {
+           justify-content: space-evenly;
+           width: 100%;
+        }
+       }
+
+       .inner_navi:last-of-type {
+         @media screen and ( max-width: $sm-screen ) {
+           background: $accent-font-color;
+         }
        }
     }
 </style>

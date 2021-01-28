@@ -85,10 +85,16 @@
         min-height: 300px;
         height: 50vh;
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
         overflow: hidden;
+
+         @media screen and ( max-width: $lg-screen ) {
+            background: url('./assets/banner_1389.png')no-repeat top right, url('./assets/banner_color.png')repeat;
+            font-size: 1.25em;
+            height: 35vh;
+         }
 
         @media screen and ( max-width: $sm-screen ) {
             background: $pink-bg url('./assets/banner_color.png')repeat;

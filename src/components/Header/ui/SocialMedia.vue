@@ -29,7 +29,9 @@ export default {
     padding: .35rem 1.15rem;
 
     @media screen and ( max-width: $sm-screen ) {
-      padding: 0 .5em .35em .5em;
+      padding: .25em;
+      font-size: 1.75em;
+      color: $pink-bg;
     }    
   }
 
@@ -40,5 +42,9 @@ export default {
     text-decoration: underline;
     outline: none;
     color: $pink-bg;
+
+    @media screen and ( max-width: $sm-screen ) {
+      color: $green-bg;
+    }
   }
 </style>
