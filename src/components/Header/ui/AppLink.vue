@@ -44,6 +44,10 @@ export default {
     text-transform: uppercase;
     font-family: $header2-font;
     padding: .35rem 1.15rem;
+
+    @media screen and ( max-width: $sm-screen ) {
+      padding: 1em .5em .5em .5em;
+    }
   }
 
   a.navi-links:hover, 

@@ -27,6 +27,10 @@ export default {
     text-decoration: none;
     font-size: 2em;
     padding: .35rem 1.15rem;
+
+    @media screen and ( max-width: $sm-screen ) {
+      padding: 0 .5em .35em .5em;
+    }    
   }
 
   a:hover.social-media-links, 

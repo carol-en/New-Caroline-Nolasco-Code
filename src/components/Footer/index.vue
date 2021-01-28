@@ -1,24 +1,35 @@
 <template>
+<Fragment>
+    <BackToTopBtn />
     <footer>
-        <BackToTopBtn />
-        <h1>Footer Component Begins Here</h1>
+        <p>Copyright Caroline Nolasco 2021</p>
     </footer>
+</Fragment>    
 </template>
 
 <script>
 import BackToTopBtn from './ui/BackToTopBtn';
-
+import { Fragment } from 'vue-fragment';
     export default {
         name: 'AppFooter',
         components: {
-            BackToTopBtn
+            BackToTopBtn,
+            Fragment
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     footer {
-        border: 1px solid gold;
+        font-size: .60em;
         text-align: center;
+        font-family: $header2-font;
+        color: $accent-font-color;
+        background: $green-bg;
+        padding-bottom: 1.5rem;
+
+         @media screen and ( max-width: $sm-screen ) {
+             padding: 1em;
+         }
     }
 </style>

@@ -87,6 +87,7 @@ export default {
 <style lang="scss">
     .navigation {
         width: 100%;
+        font-size: 1em;
         background: $green-bg;
         display: flex;
         flex-flow: nowrap row;
@@ -94,14 +95,14 @@ export default {
         align-items: center;
 
         @media screen and ( max-width: $sm-screen ) {
+          font-size: .75em;
           flex-flow: nowrap column;
         }
 
        .inner_navi {
         display: flex;
         flex-flow: nowrap row;
-        justify-content: space-evenly;
-
+        justify-content: space-between;
        }
     }
 </style>
