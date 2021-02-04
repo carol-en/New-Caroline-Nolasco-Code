@@ -19,15 +19,26 @@ export default {
     .about {
         font-size: .75em;
 
+            @media screen and ( max-width: $lg-screen ) {
+                font-size: .65em;
+            }
+
+            @media screen and ( max-width: $md-screen ) {
+                font-size: .6em;
+            }
+
+            @media screen and ( max-width: $sm-screen ) {
+                font-size: .75em;
+            }        
+
         p {
             width: 85%;
             line-height: 1.75em;
             font-size: .85em;
             font-weight: lighter;
 
-            @media screen and ( max-width: $sm-screen ) {
+            @media screen and ( max-width: $md-screen ) {
                 width: 100%;
-                font-size: .75em;
             }
         }
 
@@ -40,9 +51,9 @@ export default {
               0 1px $white-color, 1px 0 $white-color, 
               0 -1px $white-color;
 
-              @media screen and ( max-width: $sm-screen ) {
-                  font-size: 1.75em;
-              }
+            @media screen and ( max-width: $md-screen ) {
+                font-size: 1.75em;
+            }              
         }
     }
 </style>

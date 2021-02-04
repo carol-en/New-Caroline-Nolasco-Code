@@ -90,18 +90,16 @@
         align-items: center;
         overflow: hidden;
 
-         @media screen and ( max-width: $lg-screen ) {
-            background: url('./assets/banner_1389.png')no-repeat top right, url('./assets/banner_color.png')repeat;
-            font-size: 1.25em;
-            height: 35vh;
-         }
-
-        @media screen and ( max-width: $sm-screen ) {
-            background: $pink-bg url('./assets/banner_color.png')repeat;
+        @media screen and ( max-width: $md-screen ) {
             flex-flow: column;
             height: auto;
             text-align: center;
             padding: 1rem 1rem 2rem 1rem;
+
+        }        
+
+        @media screen and ( max-width: $sm-screen ) {
+            background: $pink-bg url('./assets/banner_color.png')repeat;
         }
 
 
@@ -110,9 +108,10 @@
             flex: 1;
             padding: 3rem 0 3rem 3rem;
 
-            @media screen and ( max-width: $sm-screen ) {
+            @media screen and ( max-width: $md-screen ) {
                 order: 2;
                 padding: 0;
+                width:100%;
             }
         }
 
@@ -122,9 +121,10 @@
             padding: 3rem 3rem 3rem 0;
             align-self: center;
 
-            @media screen and ( max-width: $sm-screen ) {
+            @media screen and ( max-width: $md-screen ) {
                 order: 1;
                 padding: 0;
+                width:100%;
             }
         }
     }
