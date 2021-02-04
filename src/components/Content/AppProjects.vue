@@ -103,8 +103,12 @@ export default {
         z-index: auto;
 
         @media screen and ( max-width: $lg-screen ) {
-            font-size: 1.15em;
+            font-size: .95em;
         }
+
+        @media screen and ( max-width: $lg-screen ) {
+            font-size: .85em;
+        }        
 
         @media screen and ( max-width: $sm-screen ) {
           padding: 2.5rem 1rem 2rem 1rem;
@@ -116,7 +120,7 @@ export default {
 
             @media screen and ( max-width: $sm-screen ) {
             text-align: center;
-            font-size: .80em;
+            font-size: .75em;
             width: 100%;
             }            
 
@@ -133,9 +137,22 @@ export default {
 
             p {
                 font-size: .75em;    
+                line-height: 1.5em;
+
+                @media screen and ( min-width: $xlg-screen ) {
+                    line-height: 1.85em;
+                }  
+
+                @media screen and ( max-width: $lg-screen ) {
+                    line-height: 1.80rem;
+                }                                       
+
+                @media screen and ( max-width: $md-screen ) {
+                    font-size: .70em;
+                }                       
 
                 @media screen and ( max-width: $sm-screen ) {
-                    line-height: 1.5rem;
+                    font-size: 1em;
                 }          
             }
         }
@@ -152,7 +169,7 @@ export default {
             figure {
                 img {
                     margin: 0 auto;
-                    border: $light-gray 1px solid;
+                    border: $light-gray 1px solid;                   
                 }
             }
         }
@@ -167,10 +184,18 @@ export default {
             border-width: 2em 2em 0 2em;
             z-index: 2;
 
+            @media screen and ( max-width: $lg-screen ) {
+                bottom: -1.5em;
+            }
+
+            @media screen and ( max-width: $md-screen ) {
+                bottom: -1.55rem;
+            }
+
             @media screen and ( max-width: $sm-screen ) {
                 border-width: 1.25em 1.25em 0 1.25em;
                 left: 45%;
-                bottom: -1.55rem;
+                bottom: -1.30rem;
             }
         }   
     }

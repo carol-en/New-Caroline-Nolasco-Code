@@ -98,6 +98,10 @@ export default {
           font-size: 1.25em;
         }
 
+        @media screen and ( max-width: $md-screen ) {
+          font-size: .90em;
+        }
+
         @media screen and ( max-width: $sm-screen ) {
           font-size: .75em;
           flex-flow: nowrap column;

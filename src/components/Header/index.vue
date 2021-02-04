@@ -64,12 +64,17 @@
                 height: 0;
                 border-style: solid;
                 border-width: 2em 2em 0 2em;
+                z-index: 1;
                 
+                @media screen and ( max-width: $md-screen ) {
+                    bottom: -1.55rem;
+                }
+
                 @media screen and ( max-width: $sm-screen ) {
                     border-width: 1.25em 1.25em 0 1.25em;
                     left: 45%;
-                    bottom: -1.55rem;
-                }                
+                    bottom: -1.30rem;
+                }            
         }
     }
 
@@ -89,6 +94,8 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
+        position: relative;
+        z-index: 2;
 
         @media screen and ( max-width: $md-screen ) {
             flex-flow: column;

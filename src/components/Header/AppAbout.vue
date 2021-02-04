@@ -22,11 +22,7 @@ export default {
             @media screen and ( max-width: $lg-screen ) {
                 font-size: .65em;
             }
-
-            @media screen and ( max-width: $md-screen ) {
-                font-size: .6em;
-            }
-
+            
             @media screen and ( max-width: $sm-screen ) {
                 font-size: .75em;
             }        
