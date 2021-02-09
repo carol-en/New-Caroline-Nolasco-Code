@@ -11,7 +11,7 @@
         <h2>Contact Me!</h2>
 
         <div class="form-control">
-            <p>Looking for my artwork? Visit me at <a href="https://carolinenolasco.art" target="_blank" rel="noopener noreferrer">carolinenolasco.art</a>!</p>
+            <p>Looking for my illustrations? Visit me at <a href="https://carolinenolasco.art" target="_blank" rel="noopener noreferrer">carolinenolasco.art</a>!</p>
         </div>      
 
         <div class="form-control">
@@ -120,6 +120,14 @@ export default {
         font-size: .60em;
         word-spacing: .1em;
         line-height: 1.75em;
+
+        a {
+            color: $pink-bg;
+        }
+        
+        a:hover, a:active, a:focus {
+            color: $green-bg;
+        }
     }
 
     @media screen and ( max-width: $lg-screen ) {
