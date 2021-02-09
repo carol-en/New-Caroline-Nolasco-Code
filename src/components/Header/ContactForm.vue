@@ -9,6 +9,11 @@
 
     <form class="form" @submit.prevent="sendEmail" v-else>
         <h2>Contact Me!</h2>
+
+        <div class="form-control">
+            <p>Looking for my artwork? Visit me at <a href="https://carolinenolasco.art" target="_blank" rel="noopener noreferrer">carolinenolasco.art</a>!</p>
+        </div>      
+
         <div class="form-control">
             <span class="form-label"><label for="name">Name</label></span>
             <input v-model="name" type="text" id="name" name="name" required placeholder="John Smith" />        
@@ -99,6 +104,7 @@ export default {
     background: $light-bg;
     color: $accent-font-color;
     width: 45%;
+    font-size: 1em;
     padding: 1.5rem;
     position: fixed;
     margin: 10% 28%;
@@ -108,6 +114,33 @@ export default {
     -webkit-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
     -moz-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
     box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.51);
+
+    p {
+        color: $primary-font-color;
+        font-size: .60em;
+        word-spacing: .1em;
+        line-height: 1.75em;
+    }
+
+    @media screen and ( max-width: $lg-screen ) {
+        font-size: .75em;
+        padding: 1.25rem;
+        margin: 5% 28%;
+    }    
+
+    @media screen and ( max-width: $md-screen ) {
+        font-size: .60em;
+        padding: 1.1rem;
+        width: 75%;
+        margin: 5% 15%;
+    }
+
+    @media screen and ( max-width: $sm-screen ) {
+        position: absolute;
+        width: 90%;
+        margin: 5% 5%;
+        padding: 1rem;
+    }
 
     h2 {
         text-align: center;
