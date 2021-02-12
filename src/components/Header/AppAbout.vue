@@ -10,9 +10,31 @@
 </template>
 
 <script>
+import client from "../utils/contentful";
 
 export default {
-    name: 'AppAbout'
+    name: 'AppAbout',
+
+    data() {
+        return {
+            aboutContent: ""
+        }
+    },    
+    
+    mounted: function() {
+        this.fetchAbout()        
+    },
+    methods: {
+        async fetchAbout() {
+          client.getEntry('21sIZgWzyMlXPLw3hhjV2h')
+            .then(entry => { 
+                console.log(entry)
+                console.log(this.aboutContent)
+
+                })
+            .catch(console.error)           
+        }            
+    }
 }
 </script>
 
