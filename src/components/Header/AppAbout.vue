@@ -1,17 +1,21 @@
 <template>
   <aside class="about">
       <h2>Front End Developer</h2>
-
-        <p>{{this.aboutContent.fields.body}}</p>
-
+        <vue-markdown :inline="true">
+            {{this.aboutContent.fields.body}}
+        </vue-markdown>    
   </aside>
 </template>
 
 <script>
 import client from "../utils/contentful";
+import VueMarkdown from '@adapttive/vue-markdown'
 
 export default {
     name: 'AppAbout',
+    components: {
+        VueMarkdown
+    },
 
     data() {
         return {
@@ -35,6 +39,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+        strong {
+            text-transform: uppercase;
+            color: black;
+        }
     .about {
         font-size: .75em;
 
@@ -46,16 +55,16 @@ export default {
                 font-size: .75em;
             }        
 
-        p {
-            width: 85%;
-            line-height: 1.75em;
-            font-size: .85em;
-            font-weight: lighter;
+        // p {
+        //     width: 85%;
+        //     line-height: 1.75em;
+        //     font-size: .85em;
+        //     font-weight: lighter;
 
-            @media screen and ( max-width: $md-screen ) {
-                width: 100%;
-            }
-        }
+        //     @media screen and ( max-width: $md-screen ) {
+        //         width: 100%;
+        //     }
+        // }
 
         h2 {
             font-size: 2.25em;
