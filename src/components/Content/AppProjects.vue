@@ -1,94 +1,53 @@
 <template>
   <section class="projects">
-      <aside class="prj">
+      <aside class="prj" v-for="entry in entries" :key="entry.sys.id">
           <div class="prj-data">
-              <h2>Project 1</h2>
+              <h2>{{entry.fields.title}}</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni harum quaerat dolore assumenda? Earum eum maxime optio quibusdam, suscipit aspernatur, voluptatem impedit adipisci aut nobis iste aperiam voluptate sunt sequi!
-                Amet nisi perferendis neque illum officia quos fugiat cupiditate nam. Exercitationem harum, reprehenderit
+                {{entry.fields.description}}
+              </p>
+
+              <p>
+                <a :href="entry.fields.appLink" target="_blank" rel="noopener noreferrer"><i class="fas fa-desktop"></i> Open App</a>
+                <a :href="entry.fields.githubLink" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>  Open GitHub</a>
               </p>
           </div>
 
           <div class="prj-thumbnil">
               <figure>
-                  <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
+                  <img :src="entry.fields.image.fields.file.url" :alt="entry.fields.title"/>
               </figure>
           </div>
           <footer class="tail"></footer>
       </aside>
-
-          <aside class="prj">
-          <div class="prj-data">
-              <h2>Project 2</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni harum quaerat dolore assumenda? Earum eum maxime optio quibusdam, suscipit aspernatur, voluptatem impedit adipisci aut nobis iste aperiam voluptate sunt sequi!
-                Amet nisi perferendis neque illum officia quos fugiat cupiditate nam. Exercitationem harum, reprehenderit
-              </p>
-          </div>
-
-          <div class="prj-thumbnil">
-              <figure>
-                  <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
-              </figure>
-          </div>
-          <footer class="tail"></footer>
-      </aside>
-
-      <aside class="prj">
-          <div class="prj-data">
-              <h2>Project 3</h2>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi iste eos ad illum, distinctio recusandae facilis suscipit. Aliquid voluptas veniam dignissimos iusto ipsam sit magnam incidunt esse quasi, nemo voluptatibus?Architecto tenetur temporibus dicta labore sit molestias cum deleniti velit autem iusto voluptates quidem ipsa hic natus molestiae error tempore a, at enim perspiciatis. Quo necessitatibus repellendus modi beatae saepe.
-            </p>
-          </div>
-
-          <div class="prj-thumbnil">
-              <figure>
-                  <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
-              </figure>
-          </div>         
-          <footer class="tail"></footer>
-        </aside>
-
-      <aside class="prj">
-          <div class="prj-data">
-              <h2>Project 4</h2>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi iste eos ad illum, distinctio recusandae facilis suscipit. Aliquid voluptas veniam dignissimos iusto ipsam sit magnam incidunt esse quasi, nemo voluptatibus?Architecto tenetur temporibus dicta labore sit molestias cum deleniti velit autem iusto voluptates quidem ipsa hic natus molestiae error tempore a, at enim perspiciatis. Quo necessitatibus repellendus modi beatae saepe.
-            </p>
-          </div>
-
-          <div class="prj-thumbnil">
-              <figure>
-                  <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
-              </figure>
-          </div>  
-          <footer class="tail"></footer>
-        </aside>
-
-      <aside class="prj">
-          <div class="prj-data">
-              <h2>Project 5</h2>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi iste eos ad illum, distinctio recusandae facilis suscipit. Aliquid voluptas veniam dignissimos iusto ipsam sit magnam incidunt esse quasi, nemo voluptatibus?Architecto tenetur temporibus dicta labore sit molestias cum deleniti velit autem iusto voluptates quidem ipsa hic natus molestiae error tempore a, at enim perspiciatis. Quo necessitatibus repellendus modi beatae saepe.
-            </p>
-          </div>
-
-          <div class="prj-thumbnil">
-              <figure>
-                  <img src="https://i.imgur.com/K3BflwQ.png" alt="dummy data">
-              </figure>
-          </div>
-          <footer class="tail"></footer>
-        </aside>
   </section>
 
   
 </template>
 
 <script>
+import client from "../utils/contentful";
+
 export default {
-    name: 'AppProjects'
+    name: 'AppProjects',
+
+    data() {
+    return {
+        entries: []
+        }
+    },
+
+    mounted: function() {
+        client.getEntries({
+              "content_type": "projects-code",
+              "order":"sys.createdAt"
+          })
+            .then(entries => {
+                let projectsArr = entries.items.reverse()
+                this.entries = projectsArr
+            } );
+
+    }
 }
 </script>
 
