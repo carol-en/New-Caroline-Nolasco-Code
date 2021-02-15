@@ -1,11 +1,9 @@
 <template>
   <aside class="about">
       <h2>Front End Developer</h2>
-      <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi deserunt beatae voluptatum sit. Deserunt aut hic nihil nostrum a, animi asperiores? Officiis adipisci illo nostrum dicta molestiae fuga aliquam ut!
-          Unde, ullam! Deleniti esse perferendis omnis nobis quam dignissimos quod. Quod eius odio unde modi recusandae praesentium in, enim dolorem debitis! Quis labore molestias reiciendis modi sed, nesciunt consequuntur nihil!
-          Temporibus officia et debitis dolores omnis sunt animi dolorem id ullam! Iure nihil cum libero! Animi explicabo rem dolorem, illo fugiat soluta fugit, voluptatum sed, reprehenderit a voluptatem ratione beatae?
-      </p>
+
+        <p>{{this.aboutContent.fields.body}}</p>
+
   </aside>
 </template>
 
@@ -17,20 +15,18 @@ export default {
 
     data() {
         return {
-            aboutContent: ""
+            aboutContent: null
         }
     },    
     
     mounted: function() {
-        this.fetchAbout()        
+        this.fetchAbout();        
     },
     methods: {
         async fetchAbout() {
           client.getEntry('21sIZgWzyMlXPLw3hhjV2h')
             .then(entry => { 
-                console.log(entry)
-                console.log(this.aboutContent)
-
+                this.aboutContent = Object.assign({}, this.aboutContent, entry)
                 })
             .catch(console.error)           
         }            
