@@ -3,10 +3,10 @@
       <aside class="prj" v-for="entry in entries" :key="entry.sys.id">
           <div class="prj-data">
               <h2>{{entry.fields.title}}</h2>
-              <p>
+              <h3>
                 <a :href="entry.fields.appLink" target="_blank" rel="noopener noreferrer"><i class="fas fa-desktop"></i>  Open App</a>
                 <a :href="entry.fields.githubLink" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>  Open GitHub</a>
-              </p>
+              </h3>
 
               <p>
                 {{entry.fields.description}}
@@ -60,7 +60,6 @@ export default {
         align-items: start;
         padding: 3rem;
         font-size: .65em;
-        line-height: 2em;
         z-index: auto;
 
 
@@ -92,8 +91,13 @@ export default {
 
             }
 
+            h3 {
+                font-size: 1em;
+                padding: 1em 0;
+            }
+
             p {
-                line-height: 1.5em;
+                line-height: 1.75em;
 
                 @media screen and ( min-width: $xlg-screen ) {
                     line-height: 1.85em;
