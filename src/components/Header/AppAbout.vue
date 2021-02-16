@@ -1,8 +1,8 @@
 <template>
-  <aside class="about">
+  <aside class="about" v-if="about">
       <h2>Front End Developer</h2>
         <vue-markdown :inline="true">
-            {{this.aboutContent.fields.body}}
+            {{about}}
         </vue-markdown>    
   </aside>
 </template>
@@ -19,22 +19,17 @@ export default {
 
     data() {
         return {
-            aboutContent: null
+            about: ""
         }
     },    
     
-    mounted: function() {
-        this.fetchAbout();        
-    },
-    methods: {
-        async fetchAbout() {
+    mounted: async function() {
           client.getEntry('21sIZgWzyMlXPLw3hhjV2h')
-            .then(entry => { 
-                this.aboutContent = Object.assign({}, this.aboutContent, entry)
-                })
-            .catch(console.error)           
-        }            
-    }
+            .then((entry) => { 
+                let aboutContent = entry.fields.body
+                this.about = aboutContent
+                })    
+    }                      
 }
 </script>
 

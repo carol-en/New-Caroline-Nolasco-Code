@@ -37,7 +37,7 @@ export default {
         }
     },
 
-    mounted: function() {
+    mounted: async function() {
         client.getEntries({
               "content_type": "projects-code",
               "order":"sys.createdAt"
