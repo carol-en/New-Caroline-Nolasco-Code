@@ -21,6 +21,20 @@ export default {
         font-size: 1.5em;
         letter-spacing: .05em;
 
+
+        @media screen and ( max-width: $lg-screen ) { 
+            font-size: 1.45em;
+        }
+
+        @media screen and ( max-width: $md-screen ) { 
+            font-size: 1.15em;
+        }
+
+        @media screen and ( max-width: $sm-screen ) {
+            font-size: .9em;
+            letter-spacing: .025em;
+        }         
+
         h2 {
             display: flex;
             flex-flow: nowrap column; 
@@ -37,22 +51,9 @@ export default {
             padding: 0;
 
             @media screen and ( max-width: $md-screen ) {
-                display: inline-block;
+                display: inline;
                 padding: 0 .25em;
             }
-        }
-
-        @media screen and ( max-width: $lg-screen ) { 
-            font-size: 1.45em;
-        }
-
-        @media screen and ( max-width: $md-screen ) { 
-            font-size: 1.15em;
-        }
-
-        @media screen and ( max-width: $sm-screen ) {
-            font-size: 1.25em;
-            letter-spacing: .025em;
-        }        
+        }       
     }
 </style>
