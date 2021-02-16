@@ -4,12 +4,12 @@
           <div class="prj-data">
               <h2>{{entry.fields.title}}</h2>
               <p>
-                {{entry.fields.description}}
+                <a :href="entry.fields.appLink" target="_blank" rel="noopener noreferrer"><i class="fas fa-desktop"></i> Open App</a>
+                <a :href="entry.fields.githubLink" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>  Open GitHub</a>
               </p>
 
               <p>
-                <a :href="entry.fields.appLink" target="_blank" rel="noopener noreferrer"><i class="fas fa-desktop"></i> Open App</a>
-                <a :href="entry.fields.githubLink" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>  Open GitHub</a>
+                {{entry.fields.description}}
               </p>
           </div>
 
@@ -59,14 +59,13 @@ export default {
         justify-content: space-between;
         align-items: start;
         padding: 3rem;
+        font-size: .65em;
+        line-height: 2em;
         z-index: auto;
 
-        @media screen and ( max-width: $lg-screen ) {
-            font-size: .95em;
-        }
 
         @media screen and ( max-width: $lg-screen ) {
-            font-size: .85em;
+            font-size: .70em;
         }        
 
         @media screen and ( max-width: $sm-screen ) {
@@ -79,7 +78,6 @@ export default {
 
             @media screen and ( max-width: $sm-screen ) {
             text-align: center;
-            font-size: .75em;
             width: 100%;
             }            
 
@@ -95,7 +93,6 @@ export default {
             }
 
             p {
-                font-size: .75em;    
                 line-height: 1.5em;
 
                 @media screen and ( min-width: $xlg-screen ) {
@@ -103,16 +100,18 @@ export default {
                 }  
 
                 @media screen and ( max-width: $lg-screen ) {
-                    line-height: 1.80rem;
-                }                                       
+                    line-height: 1.80em;
+                }                                               
+            }
 
-                @media screen and ( max-width: $md-screen ) {
-                    font-size: .70em;
-                }                       
+            a {
+                color: $pink-bg;
+                padding-right: 1em;
+                font-size: 1.20em;
+            }
 
-                @media screen and ( max-width: $sm-screen ) {
-                    font-size: 1em;
-                }          
+            a:hover {
+                color: $black-color;
             }
         }
 
@@ -136,7 +135,7 @@ export default {
         .tail {
             position: absolute;   
             left: 50%;
-            bottom: -2.5rem;
+            bottom: -2em;
             width: 0;
             height: 0;
             border-style: solid;
@@ -154,7 +153,7 @@ export default {
             @media screen and ( max-width: $sm-screen ) {
                 border-width: 1.25em 1.25em 0 1.25em;
                 left: 45%;
-                bottom: -1.30rem;
+                bottom: -1.05rem;
             }
         }   
     }

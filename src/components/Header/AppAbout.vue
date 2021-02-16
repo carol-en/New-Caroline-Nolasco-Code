@@ -45,7 +45,7 @@ export default {
             color: black;
         }
     .about {
-        font-size: .75em;
+        font-size: .55em;
 
             @media screen and ( max-width: $lg-screen ) {
                 font-size: .65em;
