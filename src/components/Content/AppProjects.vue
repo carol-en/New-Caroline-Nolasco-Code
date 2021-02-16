@@ -4,7 +4,7 @@
           <div class="prj-data">
               <h2>{{entry.fields.title}}</h2>
               <p>
-                <a :href="entry.fields.appLink" target="_blank" rel="noopener noreferrer"><i class="fas fa-desktop"></i> Open App</a>
+                <a :href="entry.fields.appLink" target="_blank" rel="noopener noreferrer"><i class="fas fa-desktop"></i>  Open App</a>
                 <a :href="entry.fields.githubLink" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>  Open GitHub</a>
               </p>
 
@@ -108,11 +108,7 @@ export default {
                 color: $pink-bg;
                 padding-right: 1em;
                 font-size: 1.20em;
-            }
-
-            a:hover {
-                color: $black-color;
-            }
+            }          
         }
 
         .prj-thumbnil {
@@ -180,6 +176,9 @@ export default {
                     margin: 0;
                 }
             }
+            a:hover {
+                color: $white-color;
+            }            
         }
 
         .prj-thumbnil {
@@ -213,8 +212,11 @@ export default {
 
             @media screen and ( max-width: $sm-screen ) {
                 margin: 0;
+             }
             }
-            }
+            a:hover {
+                color: $black-color;
+            }               
         }
         .prj-thumbnil {
             order: 2;

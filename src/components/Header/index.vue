@@ -6,7 +6,6 @@
             <AppAbout />
             <AppTitle />
         </section>
-        
         <section class="tail"></section>
     </header>
 </template>
@@ -16,6 +15,7 @@
     import AppAbout from './AppAbout';
     import AppTitle from './AppTitle';
     import ContactForm from './ContactForm';
+    // import { Fragment } from 'vue-fragment';
     
     export default {
         name: 'AppHeader',
@@ -23,7 +23,8 @@
             AppNav,
             AppAbout,
             AppTitle,
-            ContactForm
+            ContactForm,
+            // Fragment
         },
         data() {
             return {
@@ -59,13 +60,17 @@
                 position: absolute;  
                 border-color: $pink-bg transparent transparent transparent; 
                 left: 50%;
-                bottom: -2.5rem;
+                bottom: -2em;
                 width: 0;
                 height: 0;
                 border-style: solid;
                 border-width: 2em 2em 0 2em;
                 z-index: 1;
-                
+
+                @media screen and ( max-width: $lg-screen ) {
+                    bottom: -1.5em;
+                }
+
                 @media screen and ( max-width: $md-screen ) {
                     bottom: -1.55rem;
                 }
@@ -73,8 +78,8 @@
                 @media screen and ( max-width: $sm-screen ) {
                     border-width: 1.25em 1.25em 0 1.25em;
                     left: 45%;
-                    bottom: -1.30rem;
-                }            
+                    bottom: -1.05rem;
+                }          
         }
     }
 
