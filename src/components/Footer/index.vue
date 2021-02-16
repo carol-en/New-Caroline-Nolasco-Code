@@ -26,7 +26,7 @@ import { Fragment } from 'vue-fragment';
         font-family: $header2-font;
         color: $accent-font-color;
         background: $green-bg;
-        padding-bottom: 1.5rem;
+        padding: 1.5rem;
 
          @media screen and ( max-width: $sm-screen ) {
              padding: 1em;
