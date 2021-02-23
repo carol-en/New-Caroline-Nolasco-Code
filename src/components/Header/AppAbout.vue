@@ -1,6 +1,6 @@
 <template>
   <aside class="about" v-if="about">
-      <h2>Front End Developer</h2>
+      <h2>Developer & Designer</h2>
         <vue-markdown :inline="true">
             {{about}}
         </vue-markdown>    
@@ -49,17 +49,6 @@ export default {
             @media screen and ( max-width: $sm-screen ) {
                 font-size: .75em;
             }        
-
-        // p {
-        //     width: 85%;
-        //     line-height: 1.75em;
-        //     font-size: .85em;
-        //     font-weight: lighter;
-
-        //     @media screen and ( max-width: $md-screen ) {
-        //         width: 100%;
-        //     }
-        // }
 
         h2 {
             font-size: 2.25em;
