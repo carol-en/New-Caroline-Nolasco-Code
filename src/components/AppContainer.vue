@@ -1,8 +1,6 @@
 <template>
     <div class="container">
         <AppHeader />
-        <h1>My New Web Site Starts Here!</h1>
-        <p>I will start building my website from here. :^)</p>
         <AppContent />
         <AppFooter />
     </div>
@@ -23,10 +21,24 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .container {
-    border: 1px solid gold;
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
+    background: $app-bg;
+    font-size: 1.25em;
+    box-shadow: 0;
+
+
+    @media screen and ( min-width: $lg-screen ) {
+        width: 75%;
+        font-size: 1.45em;
+        box-shadow: 0 1em 1em 0 rgba($primary-font-color, .4);
+    }
+
+    @media screen and ( min-width: $xlg-screen ) {
+        width: 80%;
+        font-size: 1.75em;
+    }    
 }
 </style>

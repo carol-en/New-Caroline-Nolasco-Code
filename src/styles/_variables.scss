@@ -1,0 +1,42 @@
+
+//==========================
+// IMPORTS
+//==========================
+@import './reset';
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Noto+Sans:wght@400;700&display=swap;400&family=Roboto+Mono:wght@200;300&display=swap');
+
+//==========================
+//  COLORS
+//==========================
+$primary-font-color: #3a5155;
+$accent-font-color: #fff;
+$green-bg: #3a5155;
+$pink-bg: #ff7070;
+$light-bg: #f7fff7; 
+$app-bg: #fff;
+$light-gray: #dedede;
+$black-color: #000;
+$white-color: #fff;
+
+//==========================
+// FONTS
+//==========================
+$content-font: 'Noto Sans JP', sans-serif;
+$header-font:  'Lora', serif;
+$header2-font: 'Roboto Mono', monospace;
+
+
+//==========================
+// MEDIA QUERIES
+//==========================
+
+$xlg-screen: 2000px;
+$lg-screen: 1389px;
+$md-screen: 950px;
+$sm-screen: 700px;
+$xs-screen: 550;
+$xxs-screen: 350px;
+
+$lg-height: 1100px;
+
+
