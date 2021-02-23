@@ -52,7 +52,7 @@
 
         <SocialMedia 
         title="Instagram" 
-        href="https://carolinenolasco.art/" 
+        href="https://www.instagram.com/carolnart/" 
          v-bind:icons="{
           type: 'fab',
           name: 'fa-instagram-square'
