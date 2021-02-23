@@ -35,12 +35,8 @@ export default {
 
 <style scoped lang="scss">
 
-        strong {
-            text-transform: uppercase;
-            color: black;
-        }
     .about {
-        font-size: .55em;
+        font-size: .55em;      
 
             @media screen and ( max-width: $lg-screen ) {
                 font-size: .65em;
