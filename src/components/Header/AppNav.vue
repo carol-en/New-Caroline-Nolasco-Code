@@ -43,10 +43,19 @@
 
         <SocialMedia 
         title="Art Station" 
-        href="https://www.artstation.com/carolen" 
+        href="https://carolinenolasco.art/" 
          v-bind:icons="{
           type: 'fab',
           name: 'fa-artstation'
+          }">
+        </SocialMedia>
+
+        <SocialMedia 
+        title="Instagram" 
+        href="https://carolinenolasco.art/" 
+         v-bind:icons="{
+          type: 'fab',
+          name: 'fa-instagram-square'
           }">
         </SocialMedia>
       </section>

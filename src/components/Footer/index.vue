@@ -2,7 +2,7 @@
 <Fragment>
     <BackToTopBtn />
     <footer>
-        <p>Copyright Caroline Nolasco 2021</p>
+        <p>Copyright <a href="mailto:carolinenolasco.code@gmail.com">Caroline Nolasco</a> 2021</p>
     </footer>
 </Fragment>    
 </template>
@@ -27,6 +27,18 @@ import { Fragment } from 'vue-fragment';
         color: $accent-font-color;
         background: $green-bg;
         padding: 1.5rem;
+
+        a {
+            color: $pink-bg;
+        }
+
+  a:hover, 
+  a:active, 
+  a:focus, 
+  a:focus-visible {
+      text-decoration: none;
+      color: $light-bg;
+  }
 
          @media screen and ( max-width: $sm-screen ) {
              padding: 1em;
