@@ -15,10 +15,12 @@ export default {
 }
 </script>
 
-<style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    color: #2c3e50;
-    font-size: 1.5em;
-  }
+<style lang="scss">
+#app {
+font-family: $content-font;
+font-size: 1rem;
+width: 100%;
+min-height: 100vh;
+background: $app-bg;
+}
 </style>

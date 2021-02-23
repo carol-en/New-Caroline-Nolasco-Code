@@ -1,24 +1,13 @@
-# my_site
+# Caroline Nolasco
+#### _Developer, Designer, Illustrator_
 
-## Project setup
-```
-npm install
-```
+Portfolio site for my web apps, web sites, and designs.
+Powered by VueJS, running on Contentful , and hosted on Vercel.
+Designed on Adobe XD and Adobe Photoshop
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [My Site](https://carolinenolasco.com/)
+- [Email Me!](mailto:carolinenolasco.code@gmail.com)
+- [Github](https://github.com/carol-en)
+-  [LinkedIn](https://www.linkedin.com/in/carolinenolasco/)
+-  [ArtStation](https://carolinenolasco.art/)
+-  [InstaGram](https://www.instagram.com/carolnart/)
